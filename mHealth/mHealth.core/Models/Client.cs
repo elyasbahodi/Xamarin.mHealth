@@ -11,9 +11,9 @@ namespace mHealth.core.Models
     {
         public int Id { get; set;  }
         public int Height { get; set; }
-        public DateTime Birthdate { get; set; }
+        public DateTime Date { get; set; }
         public int Weight{ get; set; }
-        public Gender Gender { get; set; }
+        public int Gender { get; set; }
        
 
     }

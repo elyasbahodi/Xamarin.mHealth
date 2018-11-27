@@ -1,4 +1,5 @@
 ﻿using MvvmCross.Platform;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -21,11 +22,12 @@ namespace mHealth.core.Services
             httpClient = new HttpClient();
         }
 
-        public async Task<bool> PostJsonToApi(string url, string json)
+        public async Task<bool> PostJsonToApi(string url, object obj)
         {
-            var uri = new Uri(BaseUrl.GetBaseUrl() + url);
-            Debug.WriteLine(BaseUrl.GetBaseUrl() + url);
+            string newUrl = ReplaceUrlvalues(url, obj);
+            var uri = new Uri(BaseUrl.GetBaseUrl() + newUrl);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            string json = JsonConvert.SerializeObject(obj);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await httpClient.PostAsync(uri, content);
 
@@ -40,15 +42,15 @@ namespace mHealth.core.Services
             IList<PropertyInfo> props = new List<PropertyInfo>(type.GetProperties());
             foreach (PropertyInfo prop in props)
             {
-                replacements.Add("{" + prop.Name + "}", prop.GetValue(obj, null).ToString());
+                replacements.Add("{" + prop.Name.ToLower() + "}", prop.GetValue(obj, null).ToString());
             }
             foreach (var set in replacements)
             {
-                return url = BaseUrl.GetBaseUrl() + url.Replace(set.Key, set.Value);
+                url = url.Replace(set.Key, set.Value);
             }
-            return "";
+            string finishedUrl = BaseUrl.GetBaseUrl() + url; 
 
-
+            return finishedUrl;
         }
 
 

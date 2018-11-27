@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,24 +11,24 @@ namespace mHealth.core.Services
 {
     public class ClientService
     {
-        APIConnection _APIConnection; 
+        public APIConnection APIConnection { get; set; }
         public ClientService()
         {
-            
+            APIConnection = new APIConnection();
         }
         public Client GetClient(int id )
         {
             string url = "$api/Feedback/{"+id+"}";
-            Task<string> json = _APIConnection.GetJsonFromApi(url);
+            Task<string> json = APIConnection.GetJsonFromApi(url);
             Client client = (Client)JsonConvert.DeserializeObject(json.Result); 
             return client; 
         }
 
-        public bool Create()
+        public bool Create(Client client)
         {
-            Client client = new Client { Height = 122, Birthdate = DateTime.Now, Weight = 22, Gender = Gender.mand };
-            string json = JsonConvert.SerializeObject(client);
-            Task task = _APIConnection.PostJsonToApi("api/Feedback?height=122&date="+ DateTime.Now+ "&weight=22&gender=1", json);
+            //Client client = new Client { Height = 124, Birthdate = DateTime.Now, Weight = 22, Gender = Gender.mand };
+            Task<bool> task = APIConnection.PostJsonToApi("api/Feedback?height={height}&date={date}&weight={weight}&gender={gender}", client);
+
             return task.IsCompleted; 
             
             

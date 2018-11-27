@@ -15,14 +15,16 @@ namespace mHealth.droid
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-
+           
             ClientService clientService = new ClientService();
-            clientService.Create();
+            Client client = new Client { Height = 133, Date = DateTime.Now,  Gender = GenderConverter.Convert((Gender.kvinde)), Weight = 200 };
+            clientService.Create(client);
          
 
             
