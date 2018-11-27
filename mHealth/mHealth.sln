@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mHealth.Core", "mHealth.Core\mHealth.Core.csproj", "{2B9A591F-6494-4ADE-B6B6-B62D40DF38B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mHealth.core", "mHealth.core\mHealth.core.csproj", "{02F49D65-8441-45B5-A9D6-D5CF2B920C67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mHealth.Droid", "mHealth.Droid\mHealth.Droid.csproj", "{CAFECEED-BFF1-4AFC-B518-C3406A4223F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mHealth.droid", "mHealth.droid\mHealth.droid.csproj", "{4E71FC07-EDC9-4EA1-BD2D-AF0EACE84B1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2B9A591F-6494-4ADE-B6B6-B62D40DF38B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B9A591F-6494-4ADE-B6B6-B62D40DF38B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B9A591F-6494-4ADE-B6B6-B62D40DF38B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B9A591F-6494-4ADE-B6B6-B62D40DF38B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CAFECEED-BFF1-4AFC-B518-C3406A4223F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAFECEED-BFF1-4AFC-B518-C3406A4223F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CAFECEED-BFF1-4AFC-B518-C3406A4223F5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{CAFECEED-BFF1-4AFC-B518-C3406A4223F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CAFECEED-BFF1-4AFC-B518-C3406A4223F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CAFECEED-BFF1-4AFC-B518-C3406A4223F5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{02F49D65-8441-45B5-A9D6-D5CF2B920C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02F49D65-8441-45B5-A9D6-D5CF2B920C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02F49D65-8441-45B5-A9D6-D5CF2B920C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02F49D65-8441-45B5-A9D6-D5CF2B920C67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E71FC07-EDC9-4EA1-BD2D-AF0EACE84B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E71FC07-EDC9-4EA1-BD2D-AF0EACE84B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E71FC07-EDC9-4EA1-BD2D-AF0EACE84B1C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4E71FC07-EDC9-4EA1-BD2D-AF0EACE84B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E71FC07-EDC9-4EA1-BD2D-AF0EACE84B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E71FC07-EDC9-4EA1-BD2D-AF0EACE84B1C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
