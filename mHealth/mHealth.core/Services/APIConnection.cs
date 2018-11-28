@@ -1,5 +1,7 @@
-﻿using MvvmCross.Platform;
+﻿using mHealth.core.Models;
+using MvvmCross.Platform;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -48,17 +50,21 @@ namespace mHealth.core.Services
             {
                 url = url.Replace(set.Key, set.Value);
             }
-            string finishedUrl = BaseUrl.GetBaseUrl() + url; 
+            
 
-            return finishedUrl;
+            return url;
         }
 
 
 
-        public async Task<string> GetJsonFromApi(string url)
+        public object GetJsonFromApi(string url, object obj, int id)
         {
-            var result = await httpClient.GetAsync(url);
-            return await result.Content.ReadAsStringAsync();
+            string newString = BaseUrl.GetBaseUrl() + url.Replace("{id}", id.ToString());
+            Uri uri = new Uri(newString);
+            var result = httpClient.GetAsync(uri).Result;
+            var json = result.Content.ReadAsStringAsync().Result;
+            obj = JsonConvert.DeserializeObject<Client>(json);
+            return obj;
         }
 
 

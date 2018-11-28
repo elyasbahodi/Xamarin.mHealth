@@ -16,19 +16,14 @@ namespace mHealth.core.Services
         {
             APIConnection = new APIConnection();
         }
-        public Client GetClient(int id )
+        public object Get(int id, string url, object obj)
         {
-            string url = "$api/Feedback/{"+id+"}";
-            Task<string> json = APIConnection.GetJsonFromApi(url);
-            Client client = (Client)JsonConvert.DeserializeObject(json.Result); 
-            return client; 
+            return APIConnection.GetJsonFromApi(url, obj, id);
         }
 
         public bool Create(Client client)
         {
-            //Client client = new Client { Height = 124, Birthdate = DateTime.Now, Weight = 22, Gender = Gender.mand };
             Task<bool> task = APIConnection.PostJsonToApi("api/Feedback?height={height}&date={date}&weight={weight}&gender={gender}", client);
-
             return task.IsCompleted; 
             
             
