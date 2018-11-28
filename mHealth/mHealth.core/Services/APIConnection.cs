@@ -31,7 +31,7 @@ namespace mHealth.core.Services
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpResponseMessage response = await httpClient.PostAsync(uri, content);
 
-            return response.IsSuccessStatusCode;
+        return response.IsSuccessStatusCode;
 
         }
 

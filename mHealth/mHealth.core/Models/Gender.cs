@@ -19,17 +19,8 @@ namespace mHealth.core.Models
 
             return (int)Enum.Parse(gender.GetType(), gender.ToString());
 
-            //foreach (Gender genderTemp in Enum.GetValues(typeof(Gender)))
-            //{
-            //    if (Enum.GetUnderlyingType(gender.GetType()) == Enum.GetUnderlyingType(genderTemp.GetType()))
-            //    {
+        }
 
-            //    }
-            //}           return 0;
-        }            
-
-        
-
-    }
+     }
 
 }
