@@ -27,10 +27,9 @@ namespace mHealth.droid
             //clientService.Create(client);
 
             ClientService clientService = new ClientService();
-            Client client = null;
-            string url = "api/Feedback/{id}";
-            client = (Client)clientService.Get(11, url, client);
-            Toast.MakeText(this, client.Weight, ToastLength.Short);
+            string url = "api/Client/{id}";
+            object cli = clientService.Get(11, url);
+            Toast.MakeText(this,"nna" , ToastLength.Long);
          
 
             

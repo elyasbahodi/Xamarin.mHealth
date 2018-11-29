@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,20 +10,31 @@ namespace mHealth.core.Models
 {
     public class Client
     {
+        [JsonProperty(PropertyName = "ID")]
         public int ID { get; set;  }
-        public int Height { get; set; }
-        public DateTime Birthdate { get; set; }
-        public int Weight{ get; set; }
-        public int Gender { get; set; }
+        [JsonProperty(PropertyName = "height")]
+        public int height { get; set; }
+        [JsonProperty(PropertyName = "birthdate")]
+        public DateTime birthdate { get; set; }
+        [JsonProperty(PropertyName = "weight")]
+        public int weight{ get; set; }
+        [JsonProperty(PropertyName = "gender")]
+        public int gender { get; set; }
+        [JsonProperty(PropertyName = "Diary")]
         public Diary Diary { get; set; }
+        [JsonProperty(PropertyName = "Account")]
         public Account Account { get; set; }
+        [JsonProperty(PropertyName = "Exercise")]
         public List<Exercise> Exercises { get; set; }
-        public List<Dizziness> Dizziness { get; set; }
+        [JsonProperty(PropertyName = "Dizzinesses")]
+        public List<Dizziness> Dizzinesses { get; set; }
+        [JsonProperty(PropertyName = "Steps")]
         public List<Step> Steps { get; set; }
+
         public Client()
         {
             Exercises = new List<Exercise>();
-            Dizziness = new List<Dizziness>();
+            Dizzinesses = new List<Dizziness>();
             Steps = new List<Step>();
 
         }

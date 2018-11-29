@@ -16,9 +16,9 @@ namespace mHealth.core.Services
         {
             APIConnection = new APIConnection();
         }
-        public object Get(int id, string url, object obj)
+        public object Get(int id, string url)
         {
-            return APIConnection.GetJsonFromApi(url, obj, id);
+            return APIConnection.GetJsonFromApi(url, id);
         }
 
         public bool Create(Client client)
@@ -27,10 +27,8 @@ namespace mHealth.core.Services
             return task.IsCompleted; 
             
             
-                
-                
-                
-
         }
+
+
     }
 }

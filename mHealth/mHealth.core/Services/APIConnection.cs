@@ -57,14 +57,28 @@ namespace mHealth.core.Services
 
 
 
-        public object GetJsonFromApi(string url, object obj, int id)
+        public object GetJsonFromApi(string url, int id)
         {
             string newString = BaseUrl.GetBaseUrl() + url.Replace("{id}", id.ToString());
             Uri uri = new Uri(newString);
             var result = httpClient.GetAsync(uri).Result;
             var json = result.Content.ReadAsStringAsync().Result;
-            obj = JsonConvert.DeserializeObject<Client>(json);
-            return obj;
+
+
+
+
+            var client = JsonConvert.DeserializeObject<object>(json);
+            return client; 
+
+            //var foo = JsonConvert.DeserializeObject<A>(json);
+            //var type = Assembly.GetExecutingAssembly().GetTypes().Where(i => i.IsClass && i.Name == foo.Type).FirstOrDefault();
+            //if (type == null)
+            //{
+            //    throw new InvalidOperationException(string.Format("Type {0} not found", foo.Type));
+            //}
+            //var data = foo.Data.ToObject(type);
+
+
         }
 
 
