@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace mHealth.core
 {
-    class App : MvxApplication
+    public class App : MvxApplication
     {
         public override void Initialize()
         {

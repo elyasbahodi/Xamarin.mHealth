@@ -11,18 +11,19 @@ using Android.Views;
 using Android.Widget;
 using mHealth.core.Models;
 using mHealth.core.Services;
+using MvvmCross.Droid.Views;
 
 namespace mHealth.droid
 {
-    [Activity(Label = "CreateAccountActivity", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class CreateAccountActivity : Activity
+    [Activity(Label = "CreateAccountActivity")]
+    public class CreateAccountActivity : MvxActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             AccountService accountService = new AccountService();
-            Account account = new Account {CPR = "1234567890", Password = "123456789", Salt = "1234567870"};
+            core.Models.Account account = new core.Models.Account {CPR = "1234567890", Password = "123456789", Salt = "1234567870"};
             accountService.Create(account);
         }
     }
