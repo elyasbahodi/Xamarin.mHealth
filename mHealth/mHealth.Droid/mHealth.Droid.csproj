@@ -57,9 +57,16 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\CreateAccountActivity.cs" />
+    <Compile Include="Client\CreateClientActivity.cs" />
+    <Compile Include="Diary\CreateDiaryActivity.cs" />
+    <Compile Include="Dizziness\CreateDizzinessActivity.cs" />
+    <Compile Include="Exercise\CreateExerciseActivity.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Page\CreatePageActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Step\CreateStepActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -105,11 +112,9 @@
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
   </ItemGroup>
   <ItemGroup>
-
     <ProjectReference Include="..\mHealth.Core\mHealth.Core.csproj">
       <Project>{2b9a591f-6494-4ade-b6b6-b62d40df38b6}</Project>
       <Name>mHealth.Core</Name>
-
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
