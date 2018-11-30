@@ -112,9 +112,9 @@
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\mHealth.Core\mHealth.Core.csproj">
-      <Project>{2b9a591f-6494-4ade-b6b6-b62d40df38b6}</Project>
-      <Name>mHealth.Core</Name>
+    <ProjectReference Include="..\mHealth.core\mHealth.core.csproj">
+      <Project>{02f49d65-8441-45b5-a9d6-d5cf2b920c67}</Project>
+      <Name>mHealth.core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
