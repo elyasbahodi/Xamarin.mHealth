@@ -9,9 +9,10 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Droid.Platform;
 using mHealth.core;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Droid.Platform; 
+
 
 namespace mHealth.droid
 {
