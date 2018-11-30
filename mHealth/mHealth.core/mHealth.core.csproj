@@ -81,7 +81,11 @@
     <Compile Include="Services\BaseUrl.cs" />
     <Compile Include="Services\ClientService.cs" />
     <Compile Include="Services\DiaryService.cs" />
+    <Compile Include="Services\DizzinessService.cs" />
+    <Compile Include="Services\ExerciseService.cs" />
     <Compile Include="Services\GenericObjectHelper.cs" />
+    <Compile Include="Services\PageService.cs" />
+    <Compile Include="Services\StepService.cs" />
     <Compile Include="ViewModels\newViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
