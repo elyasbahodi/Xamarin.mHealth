@@ -1,4 +1,5 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using mHealth.core.Models;
+using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,18 @@ namespace mHealth.core.ViewModels
         public string BtnOpretProfil { get; set; }
 
         public string TxtCpr { get; set; }
+        public string TxtPassword { get; set; }
 
+        public LogInViewModel()
+        {
+            StringResources stringResources = new StringResources();
+            LblLogInWelcome = stringResources.Login().FirstOrDefault(x => x.Key == "@lblTopText").Value;
+            LblCpr = stringResources.Login().FirstOrDefault(x => x.Key == "@lblCpr").Value;
+            LblKodeord = stringResources.Login().FirstOrDefault(x => x.Key == "@lblKodeord").Value;
+            BtnLogin = stringResources.Login().FirstOrDefault(x => x.Key == "@txtLogin").Value;
+            LblIngenProfil = stringResources.Login().FirstOrDefault(x => x.Key == "@lblProfil").Value;
+            BtnOpretProfil = stringResources.Login().FirstOrDefault(x => x.Key == "@txtOpretProfil").Value;
+        }
 
 
     }
