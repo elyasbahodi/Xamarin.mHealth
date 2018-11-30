@@ -12,7 +12,7 @@ namespace mHealth.core
     {
         public void Start(object hint = null)
         {
-            ShowViewModel<newViewModel>();
+            ShowViewModel<LogInViewModel>();
         }
     }
 }
