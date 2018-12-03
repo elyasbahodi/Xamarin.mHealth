@@ -47,6 +47,8 @@ namespace mHealth.droid
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::mHealth.droid.Resource.Styleable.MvxListView;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::mHealth.droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::mHealth.droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::PCLCrypto.Resource.String.ApplicationName = global::mHealth.droid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::mHealth.droid.Resource.String.Hello;
 		}
 		
 		public partial class Animation
@@ -2477,6 +2479,9 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08003f
 			public const int bottom = 2131230783;
 			
+			// aapt resource value: 0x7f0800b2
+			public const int button1 = 2131230898;
+			
 			// aapt resource value: 0x7f080065
 			public const int buttonPanel = 2131230821;
 			
@@ -2633,14 +2638,14 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080063
 			public const int list_item = 2131230819;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int masked = 2131230898;
+			// aapt resource value: 0x7f0800b5
+			public const int masked = 2131230901;
 			
 			// aapt resource value: 0x7f0800a3
 			public const int media_actions = 2131230883;
 			
-			// aapt resource value: 0x7f0800b0
-			public const int message = 2131230896;
+			// aapt resource value: 0x7f0800b3
+			public const int message = 2131230899;
 			
 			// aapt resource value: 0x7f080033
 			public const int middle = 2131230771;
@@ -2828,6 +2833,12 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08001b
 			public const int text2 = 2131230747;
 			
+			// aapt resource value: 0x7f0800b0
+			public const int textInputEditText1 = 2131230896;
+			
+			// aapt resource value: 0x7f0800b1
+			public const int textInputEditText2 = 2131230897;
+			
 			// aapt resource value: 0x7f08006c
 			public const int textSpacerNoButtons = 2131230828;
 			
@@ -2894,8 +2905,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800b1
-			public const int visible = 2131230897;
+			// aapt resource value: 0x7f0800b4
+			public const int visible = 2131230900;
 			
 			// aapt resource value: 0x7f08003e
 			public const int withText = 2131230782;
@@ -3131,19 +3142,25 @@ namespace mHealth.droid
 			public const int notification_template_part_time = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int select_dialog_item_material = 2130968633;
+			public const int OpretProfil1_2 = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int select_dialog_multichoice_material = 2130968634;
+			public const int OpretProfil2_2 = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int select_dialog_singlechoice_material = 2130968635;
+			public const int select_dialog_item_material = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int support_simple_spinner_dropdown_item = 2130968636;
+			public const int select_dialog_multichoice_material = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int tooltip = 2130968637;
+			public const int select_dialog_singlechoice_material = 2130968637;
+			
+			// aapt resource value: 0x7f04003e
+			public const int support_simple_spinner_dropdown_item = 2130968638;
+			
+			// aapt resource value: 0x7f04003f
+			public const int tooltip = 2130968639;
 			
 			static Layout()
 			{
@@ -3180,8 +3197,14 @@ namespace mHealth.droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f090029
-			public const int LoginWelcomeText = 2131296297;
+			// aapt resource value: 0x7f090028
+			public const int ApplicationName = 2131296296;
+			
+			// aapt resource value: 0x7f090027
+			public const int Hello = 2131296295;
+			
+			// aapt resource value: 0x7f09002b
+			public const int LoginWelcomeText = 2131296299;
 			
 			// aapt resource value: 0x7f090000
 			public const int abc_action_bar_home_description = 2131296256;
@@ -3270,11 +3293,11 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f090010
 			public const int abc_toolbar_collapse_description = 2131296272;
 			
-			// aapt resource value: 0x7f090028
-			public const int action_settings = 2131296296;
+			// aapt resource value: 0x7f09002a
+			public const int action_settings = 2131296298;
 			
-			// aapt resource value: 0x7f090027
-			public const int app_name = 2131296295;
+			// aapt resource value: 0x7f090029
+			public const int app_name = 2131296297;
 			
 			// aapt resource value: 0x7f09001e
 			public const int appbar_scrolling_view_behavior = 2131296286;

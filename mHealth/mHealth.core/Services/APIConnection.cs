@@ -31,6 +31,12 @@ namespace mHealth.core.Services
 
         public async Task<bool> PostJsonToApi(string url, object obj)
         {
+            string typeName = obj.GetType().Name;
+            if (typeName == "Account")
+            {
+
+            }
+
             string newUrl = ReplaceUrlvalues(url, obj);
             var uri = new Uri(BaseUrl.GetBaseUrl() + newUrl);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
