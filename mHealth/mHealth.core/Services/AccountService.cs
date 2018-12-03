@@ -15,6 +15,11 @@ namespace mHealth.core.Services
         {
             APIConnection = new APIConnection();
         }
+        public object Get(int id, string url , object obj)
+        {
+            return APIConnection.GetJsonFromApiAsync(url, id, obj);
+        }
+
         public bool Create(Account account)
         {
             Task<bool> task = APIConnection.PostJsonToApi("api/Account?cpr={cpr}&password={password}&salt={salt}", account);

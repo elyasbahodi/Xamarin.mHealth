@@ -5,12 +5,17 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static Android.App.DownloadManager;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
 
 namespace mHealth.core.Services
 {
@@ -57,29 +62,25 @@ namespace mHealth.core.Services
 
 
 
-        public object GetJsonFromApi(string url, int id)
+
+
+        public object GetJsonFromApiAsync(string url, int id, object obj)
         {
+            Type ob = obj.GetType();
+
             string newString = BaseUrl.GetBaseUrl() + url.Replace("{id}", id.ToString());
             Uri uri = new Uri(newString);
-            var result = httpClient.GetAsync(uri).Result;
-            var json = result.Content.ReadAsStringAsync().Result;
+            var apirequest =  httpClient.GetAsync(uri).Result;
+            apirequest.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            string response = apirequest.Content.ReadAsStringAsync().Result;
+            //string news = Regex.Unescape( response);
+             var jsonString = response.Replace(@"\", "");
+             string final = jsonString.Trim().Substring(1, (jsonString.Length) - 2);
+             return JsonConvert.DeserializeObject(final, ob);
 
 
 
-
-            var client = JsonConvert.DeserializeObject<object>(json);
-            return client; 
-
-            //var foo = JsonConvert.DeserializeObject<A>(json);
-            //var type = Assembly.GetExecutingAssembly().GetTypes().Where(i => i.IsClass && i.Name == foo.Type).FirstOrDefault();
-            //if (type == null)
-            //{
-            //    throw new InvalidOperationException(string.Format("Type {0} not found", foo.Type));
-            //}
-            //var data = foo.Data.ToObject(type);
-
-
-        }
+         }
 
 
     }
