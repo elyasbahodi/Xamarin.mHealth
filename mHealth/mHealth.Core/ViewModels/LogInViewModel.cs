@@ -1,4 +1,5 @@
 ﻿using mHealth.core.Models;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace mHealth.core.ViewModels
 {
     public class LogInViewModel : MvxViewModel
     {
+        private Account account;
+        private readonly IMvxNavigationService _navigationService;
         public string LblLogInWelcome { get; set; }
         public string LblCpr { get; set; }
         public string LblKodeord { get; set; }
@@ -17,10 +20,21 @@ namespace mHealth.core.ViewModels
         public string LblIngenProfil { get; set; }
         public string BtnOpretProfil { get; set; }
 
-        public string TxtCpr { get; set; }
-        public string TxtPassword { get; set; }
+        private string _txtPassword;
+        public string TxtPassword
+        {
+            get { return _txtPassword; }
+            set { _txtPassword = value; RaisePropertyChanged(() => TxtPassword); }
+        }
+        private string _txtCpr;
+        public string TxtCpr
+        {
+            get { return _txtCpr; }
+            set { _txtCpr = value; RaisePropertyChanged(() => TxtCpr); }
+        }
 
-        public LogInViewModel()
+
+        public LogInViewModel(Account account)
         {
             StringResources stringResources = new StringResources();
             LblLogInWelcome = stringResources.Login().FirstOrDefault(x => x.Key == "@lblTopText").Value;

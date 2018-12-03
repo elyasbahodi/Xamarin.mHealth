@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
+using Android.Content;
 using Android.Runtime;
 using Android.Widget;
 using Microsoft.WindowsAzure.MobileServices;
@@ -9,10 +10,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using mHealth.core.Models;
 using System;
+using Android;
 
 namespace mHealth.droid
 {
-    [Activity(Label = "@string/app_name")]
+    [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@mipmap/ic_launcher_round")]
     public class MainActivity : AppCompatActivity
     {
 
