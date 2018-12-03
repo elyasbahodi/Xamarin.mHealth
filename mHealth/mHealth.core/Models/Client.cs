@@ -22,8 +22,7 @@ namespace mHealth.core.Models
         public int gender { get; set; }
         [JsonProperty(PropertyName = "Diary")]
         public Diary Diary { get; set; }
-        [JsonProperty(PropertyName = "Account")]
-        public Account Account { get; set; }
+       
         [JsonProperty(PropertyName = "Exercise")]
         public List<Exercise> Exercises { get; set; }
         [JsonProperty(PropertyName = "Dizzinesses")]

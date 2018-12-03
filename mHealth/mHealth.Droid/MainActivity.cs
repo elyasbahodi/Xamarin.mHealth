@@ -14,7 +14,7 @@ using Android;
 
 namespace mHealth.droid
 {
-    [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@mipmap/ic_launcher_round")]
+    [Activity(Label = "@string/app_name" , MainLauncher = true) ]
     public class MainActivity : AppCompatActivity
     {
 
@@ -28,10 +28,12 @@ namespace mHealth.droid
             //Client client = new Client { Height = 133, Date = DateTime.Now,  Gender = GenderConverter.Convert((Gender.kvinde)), Weight = 200 };
             //clientService.Create(client);
 
-            ClientService clientService = new ClientService();
-            string url = "api/Client/{id}";
-            object cli = clientService.Get(11, url);
-            Toast.MakeText(this,"nna" , ToastLength.Long);
+           AccountService clientService = new AccountService();
+            Account account = new Account {  };
+            string url = "api/Account/{id}";
+            var a = clientService.Get(1, url, account);
+             
+            Toast.MakeText(this,"x" , ToastLength.Long);
          
 
             

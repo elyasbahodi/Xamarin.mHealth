@@ -16,10 +16,10 @@ namespace mHealth.core.Services
         {
             APIConnection = new APIConnection();
         }
-        public object Get(int id, string url)
-        {
-            return APIConnection.GetJsonFromApi(url, id);
-        }
+        //public T Get<T>(int id, string url)
+        //{
+        //    return APIConnection.GetJsonFromApi(url, id);
+        //}
 
         public bool Create(Client client)
         {
