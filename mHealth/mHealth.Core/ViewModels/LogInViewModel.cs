@@ -11,7 +11,7 @@ namespace mHealth.core.ViewModels
 {
     public class LogInViewModel : MvxViewModel
     {
-        private Account account;
+        public Account Account { get; set; }
         private readonly IMvxNavigationService _navigationService;
         public string LblLogInWelcome { get; set; }
         public string LblCpr { get; set; }
@@ -24,17 +24,17 @@ namespace mHealth.core.ViewModels
         public string TxtPassword
         {
             get { return _txtPassword; }
-            set { _txtPassword = value; RaisePropertyChanged(() => TxtPassword); }
+            set { _txtPassword = value; RaisePropertyChanged(() => Account.Password); }
         }
         private string _txtCpr;
         public string TxtCpr
         {
             get { return _txtCpr; }
-            set { _txtCpr = value; RaisePropertyChanged(() => TxtCpr); }
+            set { _txtCpr = value; RaisePropertyChanged(() => Account.CPR); }
         }
 
 
-        public LogInViewModel(Account account)
+        public LogInViewModel()
         {
             StringResources stringResources = new StringResources();
             LblLogInWelcome = stringResources.Login().FirstOrDefault(x => x.Key == "@lblTopText").Value;
