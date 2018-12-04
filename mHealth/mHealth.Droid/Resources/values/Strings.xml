@@ -2,4 +2,9 @@
     <string name="app_name">mHealth.droid</string>
     <string name="action_settings">Settings</string>
   <string name="LoginWelcomeText">Her kan du logge in med dit brugernavn og kode</string>
+  <string name="CprHint">Cpr</string>
+  <string name="PasswordHint">Kodeord</string>
+  <string name="BtnLogIn">Log ind</string>
+  <string name="LblNoAccount">Har du ingen konto?</string>
+  <string name="BtnSignUp">Opret profil</string>
 </resources>

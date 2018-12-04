@@ -18,28 +18,31 @@ namespace mHealth.droid.Accounts
     [Activity(Label = "LogInActivity", MainLauncher = true)]
     public class LogInActivity : MvxActivity
     {
-        EditText EditCpr;
+
+        Button LoginBtn;
+        Button SignUpBtn;
         AccountService accountService = new AccountService();
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.LogIn);
-            EditCpr = FindViewById<EditText>(Resource.Id.editCpr);
-            
+
+            LoginBtn = FindViewById<Button>(Resource.Id.BtnLogIn);
+            SignUpBtn = FindViewById<Button>(Resource.Id.BtnSignUp);
+
             // Create your application here
         }
-        private void FindAccount()
-        {
-            Account account = new Account
-            {
-                CPR = EditCpr.Text
-            };
-            string url = "api/Account/{id}";
-            var acc = accountService.Get(1, url, account);
+        //private void FindAccount()
+        //{
 
-            Toast.MakeText(this, "x", ToastLength.Long);
+        //    string url = "api/Account/{id}";
+        //    var acc = accountService.Get(1, url, account);
 
-        }
+        //    Toast.MakeText(this, "x", ToastLength.Long);
+
+        //}
+
+
 
     }
 }

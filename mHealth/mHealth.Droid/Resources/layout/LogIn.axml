@@ -2,59 +2,57 @@
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:local="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:orientation="vertical"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:minWidth="25px"
-	android:minHeight="25px">
+	android:layout_height="match_parent">
+	<TextView
+		android:text="@string/LoginWelcomeText"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/LoginWelcome"
+		android:textAlignment="center" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/TxtCpr"
+		android:hint="@string/CprHint" />
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/TxtPassword"
+		android:hint="@string/PasswordHint" />
+	<Button
+		android:text="@string/BtnLogIn"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/BtnLogIn"
+		android:clickable="true" />
 	<TextView
 		android:textAppearance="?android:attr/textAppearanceMedium"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="30dp"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		local:MvxBind="Text LblLogInWelcome"
-		android:id="@+id/TxtWelcome"
-		android:textAlignment="center" 
-			/>
-
-	<LinearLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:local="http://schemas.android.com/apk/res-auto"
-		android:orientation="horizontal"
+		android:id="@+id/LblNoAccount"
+		android:text="@string/LblNoAccount"
+		android:layout_marginTop="30dp" />
+	<Button
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:weightSum="1">
+		android:layout_height="wrap_content"
+		android:id="@+id/BtnSignUp"
+		android:clickable="true"
+		local:MvxBind="Click MvxAsyncCommand"
+		android:text="@string/BtnSignUp" />
 
-		<TextView
-			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_weight="0.8"
-			android:layout_marginTop="30dp"
-			android:layout_marginLeft="50dp"
-			android:minWidth="25px"
-			android:minHeight="25px"
-			local:MvxBind="Text LblCpr"
-			android:id="@+id/TxtCpr"
-			/>
 
-		<EditText
-			android:textAppearance="?android:attr/textAppearanceMedium"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_weight="0.2"
-			android:layout_marginTop="30dp"
-			android:layout_marginLeft="0dp"
-			android:minWidth="25px"
-			android:minHeight="25px"
-			android:hint="Cpr"
-			local:MvxBind="Text TxtCpr, mode=TwoWay"
-			android:id="@+id/editCpr" 
-			/>
-	</LinearLayout>
+
+
+
+
+
+
+
 
 </LinearLayout>

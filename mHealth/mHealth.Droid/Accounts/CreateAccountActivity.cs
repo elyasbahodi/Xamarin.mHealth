@@ -22,20 +22,14 @@ namespace mHealth.droid.Accounts
     [Activity(Label = "CreateAccountActivity")]
     public class CreateAccountActivity : MvxActivity
     {
+        Button BtnContinue;
         AccountService accountService = new AccountService();
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.LogIn);
-               
+            SetContentView(Resource.Layout.CreateAccount);
+            BtnContinue = FindViewById<Button>(Resource.Id.BtnContinue);   
             
         }
-
-        private void CreateAccount()
-        {
-
-        }
-
-
     }
 }
