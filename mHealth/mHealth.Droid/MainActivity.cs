@@ -11,11 +11,12 @@ using System.Threading.Tasks;
 using mHealth.core.Models;
 using System;
 using Android;
+using MvvmCross.Droid.Views;
 
 namespace mHealth.droid
 {
-    [Activity(Label = "@string/app_name" , MainLauncher = true) ]
-    public class MainActivity : AppCompatActivity
+    [Activity(Label = "@string/app_name") ]
+    public class MainActivity : MvxActivity
     {
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -27,16 +28,8 @@ namespace mHealth.droid
             //ClientService clientService = new ClientService();
             //Client client = new Client { Height = 133, Date = DateTime.Now,  Gender = GenderConverter.Convert((Gender.kvinde)), Weight = 200 };
             //clientService.Create(client);
-
-           AccountService clientService = new AccountService();
-            Account account = new Account {  };
-            string url = "api/Account/{id}";
-            var a = clientService.Get(1, url, account);
-             
-            Toast.MakeText(this,"x" , ToastLength.Long);
-         
-
             
         } 
+
     }
 }

@@ -8,15 +8,53 @@
 	android:minWidth="25px"
 	android:minHeight="25px">
 	<TextView
-		android:text="Medium Text"
 		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:layout_width="171.0dp"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:layout_marginTop="30dp"
 		android:minWidth="25px"
 		android:minHeight="25px"
-		android:id="@+id/textView1"
-		local:MvxBind="Text TxtCpr"/>
+		local:MvxBind="Text LblLogInWelcome"
+		android:id="@+id/TxtWelcome"
+		android:textAlignment="center" 
+			/>
 
-	
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:local="http://schemas.android.com/apk/res-auto"
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:weightSum="1">
+
+		<TextView
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="0.8"
+			android:layout_marginTop="30dp"
+			android:layout_marginLeft="50dp"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			local:MvxBind="Text LblCpr"
+			android:id="@+id/TxtCpr"
+			/>
+
+		<EditText
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="0.2"
+			android:layout_marginTop="30dp"
+			android:layout_marginLeft="0dp"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:hint="Cpr"
+			local:MvxBind="Text TxtCpr, mode=TwoWay"
+			android:id="@+id/editCpr" 
+			/>
+	</LinearLayout>
 
 </LinearLayout>

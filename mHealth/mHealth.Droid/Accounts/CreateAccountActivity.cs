@@ -17,32 +17,25 @@ using MvvmCross.Core.Navigation;
 using MvvmCross.Droid.Views;
 using MvvmCross.Platform;
 
-namespace mHealth.droid
+namespace mHealth.droid.Accounts
 {
     [Activity(Label = "CreateAccountActivity")]
     public class CreateAccountActivity : MvxActivity
     {
+        AccountService accountService = new AccountService();
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.LogIn);
-
+               
+            
         }
 
-        public void CreateAccount()
+        private void CreateAccount()
         {
 
-            AccountService accountService = Mvx.Resolve<AccountService>();
-            Account account = new Account { CPR = "1234567890", Password = "123456789", Salt = "1234567870" };
-            accountService.Create(account);
-
         }
 
-        private async Task Navigate()
-        {
-            MvxNavigationService navigationService;
-           // await navigationService.Navigate<LogInViewModel>();
-        }
 
     }
 }

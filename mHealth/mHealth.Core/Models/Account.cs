@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static MvvmCross.Binding.ExpressionParse.MvxParsedExpression;
 
 namespace mHealth.core.Models
 {
