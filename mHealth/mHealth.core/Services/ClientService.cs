@@ -21,10 +21,10 @@ namespace mHealth.core.Services
         //    return APIConnection.GetJsonFromApi(url, id);
         //}
 
-        public bool Create(Client client)
+        public string Create(Client client)
         {
-            Task<bool> task = APIConnection.PostJsonToApi("api/Feedback?height={height}&date={date}&weight={weight}&gender={gender}", client);
-            return task.IsCompleted; 
+            Task<string> task = APIConnection.PostJsonToApi("api/Feedback?height={height}&date={date}&weight={weight}&gender={gender}", client);
+            return task.Result; 
             
             
         }

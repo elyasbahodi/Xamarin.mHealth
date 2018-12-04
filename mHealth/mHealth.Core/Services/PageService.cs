@@ -15,10 +15,10 @@ namespace mHealth.core.Services
         {
             APIConnection = new APIConnection();
         }
-        public bool Create(Page page)
+        public string Create(Page page)
         {
-            Task<bool> task = APIConnection.PostJsonToApi("api/Page?date={date}&description={description}", page);
-            return task.IsCompleted;
+            Task<string> task = APIConnection.PostJsonToApi("api/Page?date={date}&description={description}", page);
+            return task.Result;
 
 
         }

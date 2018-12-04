@@ -8,7 +8,7 @@ namespace mHealth.core.Models
 {
     public class Diary
     {
-        public int ID { get; set; }
+        public long ID { get; set; }
         public string Title { get; set; }
         public DateTime Date { get; set; }
         public List<Page> Pages { get; set; }

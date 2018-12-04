@@ -19,33 +19,21 @@ namespace mHealth.core.Services
             APIConnection = new APIConnection();
             crypto = new Crypto();
         }
-        public Account Get(int id)
+        public Account Get(long cpr)
         {
             Account account = null;
-            return (Account)APIConnection.GetJsonFromApiAsync("api/Account/{id}", id, account);
+            return (Account)APIConnection.GetJsonFromApiAsync("api/Account/{cpr}", cpr, account);
         }
 
-        public Account Create(Account account)
+        public string Create(Account account)
         {
-            if (account.CPR.Equals(Get(account.ID).CPR))
-            {
-                return false;
-            }
-            else
-            {
-
             byte[] salt = crypto.GenerateSalt();
             byte[] derivedKey = crypto.DeriveKey(account.Password, salt);
             string hash = crypto.HashPassword(derivedKey);
             account.Password = hash;
             account.Salt = Convert.ToBase64String(salt);
-            Task<bool> task = APIConnection.PostJsonToApi("api/Account?cpr={cpr}&password={password}&salt={salt}", account);
-            return task.IsCompleted;
-            }
-
-            
-
-
+            Task<string> task = APIConnection.PostJsonToApi("api/Account?cpr={cpr}&password={password}&salt={salt}", account);
+            return task.Result;
         }
     }
 }
