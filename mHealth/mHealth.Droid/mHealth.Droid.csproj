@@ -79,6 +79,10 @@
     <AndroidResource Include="Resources\layout\activity_main.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\LogIn.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
     <AndroidResource Include="Resources\values\strings.xml" />
@@ -102,7 +106,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
-    
     <PackageReference Include="MvvmCross">
       <Version>5.7.0</Version>
     </PackageReference>
@@ -121,9 +124,10 @@
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\LogIn.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
+    <ProjectReference Include="..\mHealth.core\mHealth.core.csproj">
+      <Project>{02f49d65-8441-45b5-a9d6-d5cf2b920c67}</Project>
+      <Name>mHealth.core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\CreateAccount.axml">
@@ -131,23 +135,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\mHealth.core\mHealth.core.csproj">
-      <Project>{02f49d65-8441-45b5-a9d6-d5cf2b920c67}</Project>
-      <Name>mHealth.core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\LogIn.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\OpretProfil1_2.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\OpretProfil2_2.axml">
+    <AndroidResource Include="Resources\layout\CreateClient.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

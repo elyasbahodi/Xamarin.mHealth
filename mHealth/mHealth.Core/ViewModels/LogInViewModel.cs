@@ -1,4 +1,5 @@
 ﻿using mHealth.core.Models;
+using mHealth.core.Services;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using System;
@@ -13,12 +14,8 @@ namespace mHealth.core.ViewModels
     {
         public Account Account { get; set; }
         private readonly IMvxNavigationService _navigationService;
-        public string LblLogInWelcome { get; set; }
-        public string LblCpr { get; set; }
-        public string LblKodeord { get; set; }
-        public string BtnLogin { get; set; }
-        public string LblIngenProfil { get; set; }
-        public string BtnOpretProfil { get; set; }
+        public IMvxAsyncCommand MvxAsyncCommand { get; set; }
+        public AccountService AccountService { get; set; }
 
         private string _txtPassword;
         public string TxtPassword
@@ -34,16 +31,15 @@ namespace mHealth.core.ViewModels
         }
 
 
-        public LogInViewModel()
+        public LogInViewModel(IMvxNavigationService navigationService)
         {
-            StringResources stringResources = new StringResources();
-            LblLogInWelcome = stringResources.Login().FirstOrDefault(x => x.Key == "@lblTopText").Value;
-            LblCpr = stringResources.Login().FirstOrDefault(x => x.Key == "@lblCpr").Value;
-            LblKodeord = stringResources.Login().FirstOrDefault(x => x.Key == "@lblKodeord").Value;
-            BtnLogin = stringResources.Login().FirstOrDefault(x => x.Key == "@txtLogin").Value;
-            LblIngenProfil = stringResources.Login().FirstOrDefault(x => x.Key == "@lblProfil").Value;
-            BtnOpretProfil = stringResources.Login().FirstOrDefault(x => x.Key == "@txtOpretProfil").Value;
+            AccountService = new AccountService();
+            _navigationService = navigationService;
+            MvxAsyncCommand = new MvxAsyncCommand(() => _navigationService.Navigate<CreateAccountViewModel>());
         }
+        
+        
+
 
 
     }
