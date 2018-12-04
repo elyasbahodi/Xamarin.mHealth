@@ -45,10 +45,15 @@ namespace mHealth.core.ViewModels
         //}
         public IMvxCommand CreateAccount()
         {
-            AccountService.Create(account);
+            bool isCreated = AccountService.Create(account);
 
+            if (isCreated)
+            {
+                AccountService.Get();
 
-            return null;
+            }
+
+            return MvxAsyncCommand;
         }
 
 
