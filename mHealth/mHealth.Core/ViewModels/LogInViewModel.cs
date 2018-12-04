@@ -20,6 +20,10 @@ namespace mHealth.core.ViewModels
         public string LblIngenProfil { get; set; }
         public string BtnOpretProfil { get; set; }
 
+
+
+
+
         private string _txtPassword;
         public string TxtPassword
         {

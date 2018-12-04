@@ -9,22 +9,35 @@ namespace mHealth.core.Business_Logic
 {
     public class Crypto
     {
-        public void crypt()
+       
+
+        public byte[] GenerateSalt()
         {
-            byte[] keyMaterial = new byte[10]; 
-            byte[] data = new byte[10];
-            var provider = WinRTCrypto.SymmetricKeyAlgorithmProvider.OpenAlgorithm(SymmetricAlgorithm.AesCbcPkcs7);
-            var key = provider.CreateSymmetricKey(keyMaterial);
-
-            // The IV may be null, but supplying a random IV increases security.
-            // The IV is not a secret like the key is.
-            // You can transmit the IV (w/o encryption) alongside the ciphertext.
-            var iv = WinRTCrypto.CryptographicBuffer.GenerateRandom(provider.BlockLength);
-
-            byte[] cipherText = WinRTCrypto.CryptographicEngine.Encrypt(key, data, iv);
-
-            // When decrypting, use the same IV that was passed to encrypt.
-            byte[] plainText = WinRTCrypto.CryptographicEngine.Decrypt(key, cipherText, iv);
+            byte[] cryptoRandomBuffer = new byte[16];
+            NetFxCrypto.RandomNumberGenerator.GetBytes(cryptoRandomBuffer);
+            return cryptoRandomBuffer;
         }
+        public string HashPassword(byte[] key)
+        {
+            
+            var hasher = WinRTCrypto.HashAlgorithmProvider.OpenAlgorithm(HashAlgorithm.Sha1);
+            byte[] hash = hasher.HashData(key);
+           return Convert.ToBase64String(hash);
+
+        }
+
+         public byte[] DeriveKey(string password, byte[] salt)
+        {
+           
+           // comes in from the user.
+            // best initialized to a unique value for each user, and stored with the user record
+            int iterations = 5000; // higher makes brute force attacks more expensive
+            int keyLengthInBytes = 16;
+            byte[] key = NetFxCrypto.DeriveBytes.GetBytes(password, salt, iterations, keyLengthInBytes);
+            return key; 
+        }
+
+       
+
     }
 }
