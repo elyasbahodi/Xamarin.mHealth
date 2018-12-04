@@ -17,6 +17,10 @@ namespace mHealth.core.ViewModels
         public IMvxAsyncCommand MvxAsyncCommand { get; set; }
         public AccountService AccountService { get; set; }
 
+
+
+
+
         private string _txtPassword;
         public string TxtPassword
         {

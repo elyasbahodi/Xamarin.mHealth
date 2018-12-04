@@ -1,4 +1,5 @@
-﻿using mHealth.core.Models;
+﻿using mHealth.core.Business_Logic;
+using mHealth.core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,14 @@ namespace mHealth.core.Services
 {
     public class AccountService
     {
+        Crypto crypto; 
+
         public APIConnection APIConnection { get; set; }
 
         public AccountService()
         {
             APIConnection = new APIConnection();
+            crypto = new Crypto();
         }
         public object Get(int id, string url , object obj)
         {
@@ -22,6 +26,12 @@ namespace mHealth.core.Services
 
         public bool Create(Account account)
         {
+            byte[] salt = crypto.GenerateSalt();
+            byte[] derivedKey = crypto.DeriveKey(account.Password, salt);
+            string hash = crypto.HashPassword(derivedKey);
+            account.Password = hash;
+            account.Salt = Convert.ToBase64String(salt); 
+
             Task<bool> task = APIConnection.PostJsonToApi("api/Account?cpr={cpr}&password={password}&salt={salt}", account);
             return task.IsCompleted;
 
