@@ -71,7 +71,7 @@ namespace mHealth.core.Services
         {
             Type ob = obj.GetType();
 
-            string newString = BaseUrl.GetBaseUrl() + url.Replace("{id}", id.ToString());
+            string newString = BaseUrl.GetBaseUrl() + url.Replace("{cpr}", id.ToString());
             Uri uri = new Uri(newString);
             var apirequest =  httpClient.GetAsync(uri).Result;
             apirequest.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
