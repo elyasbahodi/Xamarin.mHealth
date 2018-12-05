@@ -7,20 +7,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace mHealth.core.ViewModels
 {
-    class CreateAccountViewModel : MvxViewModel
+    public class CreateAccountViewModel : MvxViewModel
     {
         public Account Account { get; set; }
         private AccountService AccountService { get; set; }
         IMvxNavigationService _navigationService;
-        public IMvxCommand MvxNavigateToCreateClientAsyncCommand { get; set; }
-        private string _cpr;
-        public string Cpr
+        public MvxCommand MvxNavigateToCreateClientAsyncCommand { get; set; }
+       
+
+        public IMvxCommand CreateAccountCommand
+        {
+            get { return new MvxCommand(async()=> {
+                await CreateAccount();
+            }); }
+           
+        }
+
+
+
+
+        private long _cpr;
+        public long Cpr
         {
             get { return _cpr; }
-            set { _cpr = value; RaisePropertyChanged(() => Account.CPR); }
+            set { _cpr = value; RaisePropertyChanged(() => Cpr); }
         }
 
         public string isCreated { get; set; }
@@ -29,7 +43,7 @@ namespace mHealth.core.ViewModels
         public string Password
         {
             get { return _Password; }
-            set { _Password = value; RaisePropertyChanged(() => Account.Password); }
+            set { _Password = value; RaisePropertyChanged(() => Password); }
         }
 
         public CreateAccountViewModel(IMvxNavigationService navigationService)
@@ -37,21 +51,19 @@ namespace mHealth.core.ViewModels
             AccountService = new AccountService();
             _navigationService = navigationService;
             MvxNavigateToCreateClientAsyncCommand = new MvxCommand(() => ShowViewModel<CreateClientViewModel>(Account));
+            Account = new Account();
 
         }
 
-        //public MvxCommand CreateAccountCommand()
-        //{
-        //    AccountService.Create(account);
-
-        //}
-        public IMvxCommand CreateAccount()
+        public async Task<string> CreateAccount()
         {
-            isCreated = AccountService.Create(Account);
+            Account.Password = Password;
+            Account.CPR = Cpr;
 
-
-            return MvxNavigateToCreateClientAsyncCommand;
+            MvxNavigateToCreateClientAsyncCommand.Execute();
+            return await AccountService.Create(Account);
         }
+
 
 
 

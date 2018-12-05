@@ -16,7 +16,7 @@ namespace mHealth.core.ViewModels
         public IMvxAsyncCommand MvxAsyncCommand { get; set; }
 
 
-        public CreateClientViewModel(Account account, IMvxNavigationService navigationService)
+        public CreateClientViewModel(IMvxNavigationService navigationService, Account account)
         {
             Account = account;
             _navigationService = navigationService;

@@ -52,11 +52,15 @@ namespace mHealth.core.Services
             IList<PropertyInfo> props = new List<PropertyInfo>(type.GetProperties());
             foreach (PropertyInfo prop in props)
             {
-                replacements.Add("{" + prop.Name.ToLower() + "}", prop.GetValue(obj, null).ToString());
+                if (prop.GetValue(obj) != null)
+                {
+                    replacements.Add("{" + prop.Name.ToLower() + "}", prop.GetValue(obj).ToString());
+                }
             }
             foreach (var set in replacements)
             {
                 url = url.Replace(set.Key, set.Value);
+               
             }
             
 
