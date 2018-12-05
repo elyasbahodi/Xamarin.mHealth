@@ -29,7 +29,7 @@ namespace mHealth.core.Services
             httpClient = new HttpClient();
         }
 
-        public async Task<int> PostJsonToApi(string url, object obj)
+        public async Task<string> PostJsonToApi(string url, object obj)
         {
 
             string newUrl = ReplaceUrlvalues(url, obj);
@@ -41,7 +41,7 @@ namespace mHealth.core.Services
 
 
 
-            return Convert.ToInt32(response.RequestMessage.ToString());
+            return response.RequestMessage.ToString();
 
         }
 
@@ -67,7 +67,7 @@ namespace mHealth.core.Services
 
 
 
-        public object GetJsonFromApiAsync(string url, int id, object obj)
+        public object GetJsonFromApiAsync(string url, long id, object obj)
         {
             Type ob = obj.GetType();
 

@@ -9,10 +9,9 @@ namespace mHealth.core.Models
 {
     public class Account
     {
-        [JsonProperty(PropertyName = "id")]
-        public int ID { get; set; }
+
         [JsonProperty(PropertyName = "cpr")]
-        public string CPR { get; set; }
+        public long CPR { get; set; }
         [JsonProperty(PropertyName = "password")]
         public string Password { get; set; }
         [JsonProperty(PropertyName = "salt")]

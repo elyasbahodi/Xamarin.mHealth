@@ -12,29 +12,31 @@ namespace mHealth.core.ViewModels
 {
     class CreateAccountViewModel : MvxViewModel
     {
-        Account account;
+        public Account Account { get; set; }
         private AccountService AccountService { get; set; }
         IMvxNavigationService _navigationService;
-        public IMvxAsyncCommand MvxAsyncCommand { get; set; }
+        public IMvxCommand MvxNavigateToCreateClientAsyncCommand { get; set; }
         private string _cpr;
         public string Cpr
         {
             get { return _cpr; }
-            set { _cpr = value; RaisePropertyChanged(() => account.CPR); }
+            set { _cpr = value; RaisePropertyChanged(() => Account.CPR); }
         }
+
+        public string isCreated { get; set; }
 
         private string _Password;
         public string Password
         {
             get { return _Password; }
-            set { _Password = value; RaisePropertyChanged(() => account.Password); }
+            set { _Password = value; RaisePropertyChanged(() => Account.Password); }
         }
 
         public CreateAccountViewModel(IMvxNavigationService navigationService)
         {
             AccountService = new AccountService();
             _navigationService = navigationService;
-            MvxAsyncCommand = new MvxAsyncCommand(() => _navigationService.Navigate<CreateClientViewModel>());
+            MvxNavigateToCreateClientAsyncCommand = new MvxCommand(() => ShowViewModel<CreateClientViewModel>(Account));
 
         }
 
@@ -45,10 +47,10 @@ namespace mHealth.core.ViewModels
         //}
         public IMvxCommand CreateAccount()
         {
-            AccountService.Create(account);
+            isCreated = AccountService.Create(Account);
 
 
-            return null;
+            return MvxNavigateToCreateClientAsyncCommand;
         }
 
 

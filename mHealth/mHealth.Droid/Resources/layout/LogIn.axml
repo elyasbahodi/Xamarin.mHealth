@@ -43,7 +43,7 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/BtnSignUp"
 		android:clickable="true"
-		local:MvxBind="Click MvxAsyncCommand"
+		local:MvxBind="Click MvxCreateAccountCommand"
 		android:text="@string/BtnSignUp" />
 
 

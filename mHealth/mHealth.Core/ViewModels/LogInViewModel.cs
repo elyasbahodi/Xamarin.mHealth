@@ -14,7 +14,7 @@ namespace mHealth.core.ViewModels
     {
         public Account Account { get; set; }
         private readonly IMvxNavigationService _navigationService;
-        public IMvxAsyncCommand MvxAsyncCommand { get; set; }
+        public IMvxCommand MvxCreateAccountCommand { get; set; }
         public AccountService AccountService { get; set; }
 
 
@@ -39,7 +39,7 @@ namespace mHealth.core.ViewModels
         {
             AccountService = new AccountService();
             _navigationService = navigationService;
-            MvxAsyncCommand = new MvxAsyncCommand(() => _navigationService.Navigate<CreateAccountViewModel>());
+            MvxCreateAccountCommand = new MvxCommand(() => ShowViewModel<CreateAccountViewModel>());
         }
         
         
