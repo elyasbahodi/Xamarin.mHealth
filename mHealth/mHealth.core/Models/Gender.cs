@@ -12,15 +12,5 @@ namespace mHealth.core.Models
         kvinde = 2
     }
 
-    public static class GenderConverter
-    {
-        public static int Convert(Gender gender)
-        {
-
-            return (int)Enum.Parse(gender.GetType(), gender.ToString());
-
-        }
-
-     }
 
 }

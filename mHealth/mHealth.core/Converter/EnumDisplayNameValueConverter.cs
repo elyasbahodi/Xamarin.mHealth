@@ -1,4 +1,5 @@
-﻿using MvvmCross.Platform.Converters;
+﻿using mHealth.core.Models;
+using MvvmCross.Platform.Converters;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -22,7 +23,24 @@ namespace mHealth.core.Converter
             return value.ToString();
         }
 
-     
+        public int Convert(Enum gender)
+        {
+            int genderType;
+            if (gender.ToString().Equals("mand"))
+            {
+                
+                genderType = (int)Gender.mand;
+            }
+            else
+            {
+                genderType = (int)Gender.kvinde;
+            }
+            return genderType;
+
+
+        }
+
+
 
     }  
 }

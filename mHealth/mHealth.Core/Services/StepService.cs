@@ -15,10 +15,9 @@ namespace mHealth.core.Services
         {
             APIConnection = new APIConnection();
         }
-        public string Create(Step step)
+        public async Task Create(Step step)
         {
-            Task<string> task = APIConnection.PostJsonToApi("api/Step/{id}?date={date}&count={count}", step);
-            return task.Result;
+            await APIConnection.PostJsonToApi("api/Step/{id}?date={date}&count={count}", step);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace mHealth.core.Models
         public long ID { get; set;  }
         [JsonProperty(PropertyName = "height")]
         public int height { get; set; }
-        [JsonProperty(PropertyName = "birthdate")]
+        [JsonProperty(PropertyName = "date")]
         public DateTime birthdate { get; set; }
         [JsonProperty(PropertyName = "weight")]
         public int weight{ get; set; }

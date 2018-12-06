@@ -15,12 +15,9 @@ namespace mHealth.core.Services
         {
             APIConnection = new APIConnection();
         }
-        public string Create(Page page)
+        public async Task Create(Page page)
         {
-            Task<string> task = APIConnection.PostJsonToApi("api/Page?date={date}&description={description}", page);
-            return task.Result;
-
-
+            await APIConnection.PostJsonToApi("api/Page?date={date}&description={description}", page);
         }
 
     }

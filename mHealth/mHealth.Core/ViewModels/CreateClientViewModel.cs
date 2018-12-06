@@ -1,9 +1,11 @@
-﻿using mHealth.core.Models;
+﻿using mHealth.core.Converter;
+using mHealth.core.Models;
 using mHealth.core.Services;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +17,7 @@ namespace mHealth.core.ViewModels
     {
         private Account Account;
         private Client Client;
-      
+        private EnumDisplayNameValueConverter displayNameValueConverter;    
 
         private ClientService ClientService;
         public IMvxNavigationService _navigationService { get; set; }
@@ -64,7 +66,7 @@ namespace mHealth.core.ViewModels
         public CreateClientViewModel(IMvxNavigationService navigationService)
         {
             Client = new Client();
-         
+            displayNameValueConverter = new EnumDisplayNameValueConverter();
             _navigationService = navigationService;
             ClientService = new ClientService();
 
@@ -79,12 +81,13 @@ namespace mHealth.core.ViewModels
 
         public async Task Navigate()
         {
-            Client.gender = GenderConverter.Convert(SelectedType);
+            Debug.WriteLine(SelectedType.ToString());
+            Client.gender = displayNameValueConverter.Convert(SelectedType);
             Client.weight = Weight;
-            Client.height = Height; 
+            Client.height = Height;
             Client.birthdate = Birthday;
             Client.ID = Account.CPR;
-            ClientService.Create(Client); 
+            await ClientService.Create(Client);
             await _navigationService.Navigate<LogInViewModel>();
         }
 

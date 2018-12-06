@@ -15,10 +15,9 @@ namespace mHealth.core.Services
         {
             APIConnection = new APIConnection();
         }
-        public string Create(Exercise exercise)
+        public async Task Create(Exercise exercise)
         {
-            Task<string> task = APIConnection.PostJsonToApi("api/Exercise?title={title}&description={description}", exercise);
-            return task.Result;
+            await APIConnection.PostJsonToApi("api/Exercise?title={title}&description={description}", exercise);
 
 
         }

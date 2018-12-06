@@ -21,10 +21,9 @@ namespace mHealth.core.Services
         //    return APIConnection.GetJsonFromApi(url, id);
         //}
 
-        public string Create(Client client)
+        public async Task Create(Client client)
         {
-            Task<string> task = APIConnection.PostJsonToApi("api/Feedback?height={height}&date={date}&weight={weight}&gender={gender}", client);
-            return task.Result; 
+            await APIConnection.PostJsonToApi("api/Client?height={height}&date={date}&weight={weight}&gender={gender}", client);
             
             
         }
