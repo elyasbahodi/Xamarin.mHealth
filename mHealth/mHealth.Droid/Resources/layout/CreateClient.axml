@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:local="http://schemas.android.com/apk/res-auto"
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:clickable="false" >
+	android:minWidth="25px"
+	android:minHeight="25px">
+	<TextView
+		android:text="Opret profil 2/2"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView1" />
+	<Spinner
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_marginTop="10dp"
+		local:MvxBind="ItemsSource GenderTypes; HandleItemSelected SelectedType"
+		android:id="@+id/GenderSpinner" />
+	<DatePicker
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		local:MvxBind="Text Birthday, Mode=TwoWay"
+		android:id="@+id/datePicker1" />
+	<android.support.design.widget.TextInputEditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Weight..."
+		local:MvxBind="Text Weight, Mode=TwoWay"
+		android:id="@+id/textInputEditText1" />
+	<android.support.design.widget.TextInputEditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Height..."
+		local:MvxBind="Text Height, Mode=TwoWay"
+		android:id="@+id/textInputEditText2" />
+
+
+
+
+
+
 
 </LinearLayout>
