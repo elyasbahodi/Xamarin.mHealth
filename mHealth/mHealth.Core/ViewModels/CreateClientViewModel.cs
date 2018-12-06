@@ -1,4 +1,5 @@
 ﻿using mHealth.core.Models;
+using mHealth.core.Services;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using System;
@@ -6,20 +7,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace mHealth.core.ViewModels
 {
     public class CreateClientViewModel : MvxViewModel<Account>
     {
-        public Account Account { get; set; }
-        public Client Client { get; set; }
-        public Gender Gender { get; set; }
+        private Account Account;
+        private Client Client;
+      
+
+        private ClientService ClientService;
         public IMvxNavigationService _navigationService { get; set; }
-        public IMvxAsyncCommand MvxAsyncCommand { get; set; }
+
+
+       
+
+        public ICommand NavigateToLogin => new MvxAsyncCommand(Navigate); 
 
         public IEnumerable<Gender> GenderTypes
         {
             get { return Enum.GetValues(typeof(Gender)).Cast<Gender>(); }
+
         }
         private Gender _selectedType;
         public Gender SelectedType
@@ -55,9 +64,11 @@ namespace mHealth.core.ViewModels
         public CreateClientViewModel(IMvxNavigationService navigationService)
         {
             Client = new Client();
-            Gender = new Gender();
+         
             _navigationService = navigationService;
-            MvxAsyncCommand = new MvxAsyncCommand(() => _navigationService.Navigate<LogInViewModel>());
+            ClientService = new ClientService();
+
+
 
         }
 
@@ -65,5 +76,23 @@ namespace mHealth.core.ViewModels
         {
             Account = parameter;
         }
+
+        public async Task Navigate()
+        {
+            Client.gender = GenderConverter.Convert(SelectedType);
+            Client.weight = Weight;
+            Client.height = Height; 
+            Client.birthdate = Birthday;
+            Client.ID = Account.CPR;
+            ClientService.Create(Client); 
+            await _navigationService.Navigate<LogInViewModel>();
+        }
+
+        
+
+
+
+        
+
     }
 }

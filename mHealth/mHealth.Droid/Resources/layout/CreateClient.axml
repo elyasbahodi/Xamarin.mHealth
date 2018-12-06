@@ -13,19 +13,28 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView1" />
-	<Spinner
-		android:layout_width="match_parent"
+		<MvxSpinner
+	android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:minWidth="25px"
 		android:minHeight="25px"
+	local:MvxItemTemplate="@layout/spinneritem"
+      local:MvxDropDownItemTemplate="@layout/spinnerdropdownitem"
 		android:layout_marginTop="10dp"
-		local:MvxBind="ItemsSource GenderTypes; HandleItemSelected SelectedType"
-		android:id="@+id/GenderSpinner" />
-	<DatePicker
+		local:MvxBind="ItemsSource GenderTypes; HandleItemSelected SelectedType, Mode=TwoWay"
+		android:id="@+id/GenderSpinner"/>
+<TextView
+		android:text=""
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		local:MvxBind="Text Birthday, Mode=TwoWay"
-		android:id="@+id/datePicker1" />
+		android:id="@+id/date_display" 
+		local:MvxBind="Text Birthday, Mode=OneWayToSource"
+	/>
+	<Button
+		android:text="Vælg Dato"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/date_select_button" />
 	<android.support.design.widget.TextInputEditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -38,6 +47,11 @@
 		android:hint="Height..."
 		local:MvxBind="Text Height, Mode=TwoWay"
 		android:id="@+id/textInputEditText2" />
+	<Button
+		android:text="Opret Profil"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		local:MvxBind="Click NavigateToLogin"/>
 
 
 
@@ -46,3 +60,4 @@
 
 
 </LinearLayout>
+

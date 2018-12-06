@@ -25,9 +25,7 @@ namespace mHealth.droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            //ClientService clientService = new ClientService();
-            //Client client = new Client { Height = 133, Date = DateTime.Now,  Gender = GenderConverter.Convert((Gender.kvinde)), Weight = 200 };
-            //clientService.Create(client);
+         
             
         } 
 

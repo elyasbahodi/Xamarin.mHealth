@@ -58,9 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accounts\CreateAccountActivity.cs" />
-    <Compile Include="Accounts\CreateClientActivity.cs" />
     <Compile Include="Accounts\LogInActivity.cs" />
     <Compile Include="Clients\CreateClientActivity.cs" />
+    <Compile Include="Clients\CreateClientDatePickerFragment.cs" />
     <Compile Include="Diaries\CreateDiaryActivity.cs" />
     <Compile Include="Dizzinesses\CreateDizzinessActivity.cs" />
     <Compile Include="Exercises\CreateExerciseActivity.cs" />
@@ -140,6 +140,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\CreateClient.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\SpinnerDropDownItem.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\SpinnerItem.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
