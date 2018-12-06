@@ -2,10 +2,6 @@
 using mHealth.core.Services;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -15,20 +11,19 @@ namespace mHealth.core.ViewModels
     {
         public Account Account { get; set; }
         private AccountService AccountService { get; set; }
-        IMvxNavigationService _navigationService;
-        public MvxCommand MvxNavigateToCreateClientAsyncCommand { get; set; }
-       
+        private IMvxNavigationService _navigationService { get; set; }
+        public ICommand NavigateToCreateClient => new MvxAsyncCommand(GoToNavigateToCreateClient);
 
-        public IMvxCommand CreateAccountCommand
+
+
+        private async Task GoToNavigateToCreateClient()
         {
-            get { return new MvxCommand(async()=> {
-                await CreateAccount();
-            }); }
-           
+            Account.CPR = Cpr;
+            Account.Password = Password;
+
+            await AccountService.Create(Account);
+            await _navigationService.Navigate<CreateClientViewModel, Account>(Account);
         }
-
-
-
 
         private long _cpr;
         public long Cpr
@@ -36,8 +31,6 @@ namespace mHealth.core.ViewModels
             get { return _cpr; }
             set { _cpr = value; RaisePropertyChanged(() => Cpr); }
         }
-
-        public string isCreated { get; set; }
 
         private string _Password;
         public string Password
@@ -50,24 +43,8 @@ namespace mHealth.core.ViewModels
         {
             AccountService = new AccountService();
             _navigationService = navigationService;
-            MvxNavigateToCreateClientAsyncCommand = new MvxCommand(() => ShowViewModel<CreateClientViewModel>(Account));
             Account = new Account();
 
         }
-
-        public async Task<string> CreateAccount()
-        {
-            Account.Password = Password;
-            Account.CPR = Cpr;
-
-            MvxNavigateToCreateClientAsyncCommand.Execute();
-            return await AccountService.Create(Account);
-        }
-
-
-
-
-
-
     }
 }
