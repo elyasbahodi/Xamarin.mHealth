@@ -10,11 +10,11 @@ namespace mHealth.core.Models
 {
     public class Client
     {
-        [JsonProperty(PropertyName = "ID")]
-        public long ID { get; set;  }
+        [JsonProperty(PropertyName = "cvr")]
+        public long cvr { get; set;  }
         [JsonProperty(PropertyName = "height")]
         public int height { get; set; }
-        [JsonProperty(PropertyName = "date")]
+        [JsonProperty(PropertyName = "birthdate")]
         public DateTime birthdate { get; set; }
         [JsonProperty(PropertyName = "weight")]
         public int weight{ get; set; }

@@ -86,7 +86,7 @@ namespace mHealth.core.ViewModels
             Client.weight = Weight;
             Client.height = Height;
             Client.birthdate = Birthday;
-            Client.ID = Account.CPR;
+            Client.cvr = Account.CPR;
             await ClientService.Create(Client);
             await _navigationService.Navigate<LogInViewModel>();
         }
