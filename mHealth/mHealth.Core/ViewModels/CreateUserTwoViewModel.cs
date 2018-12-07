@@ -5,7 +5,6 @@ using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,19 +12,17 @@ using System.Windows.Input;
 
 namespace mHealth.core.ViewModels
 {
-    public class CreateClientViewModel : MvxViewModel<Account>
-    {
-        private Account Account;
-        private Client Client;
-        private EnumDisplayNameValueConverter displayNameValueConverter;    
 
-        private ClientService ClientService;
+
+    public class CreateUserTwoViewModel : MvxViewModel
+    {
+        private User user;
+        private EnumDisplayNameValueConverter displayNameValueConverter;
+
+        private UserService userService;
         public IMvxNavigationService _navigationService { get; set; }
 
-
-       
-
-        public ICommand NavigateToLogin => new MvxAsyncCommand(Navigate); 
+        public ICommand NavigateToLogin => new MvxAsyncCommand(Navigate);
 
         public IEnumerable<Gender> GenderTypes
         {
@@ -63,39 +60,35 @@ namespace mHealth.core.ViewModels
             set { _height = value; RaisePropertyChanged(() => Height); }
         }
 
-        public CreateClientViewModel(IMvxNavigationService navigationService)
+        public CreateUserTwoViewModel()
         {
-            Client = new Client();
+           // Init(username, password);
+            user = new User();
+            userService = new UserService();
             displayNameValueConverter = new EnumDisplayNameValueConverter();
-            _navigationService = navigationService;
-            ClientService = new ClientService();
-
-
-
-        }
-
-        public override void Prepare(Account parameter)
-        {
-            Account = parameter;
         }
 
         public async Task Navigate()
         {
-            Debug.WriteLine(SelectedType.ToString());
-            Client.gender = displayNameValueConverter.Convert(SelectedType);
-            Client.weight = Weight;
-            Client.height = Height;
-            Client.birthdate = Birthday;
-            Client.cvr = Account.CPR;
-            await ClientService.Create(Client);
+            user.Gender = displayNameValueConverter.Convert(SelectedType);
+            user.Weight = Weight;
+            user.Height = Height;
+            user.Birthdate = Birthday;
+            await userService.Create(user);
             await _navigationService.Navigate<LogInViewModel>();
         }
 
-        
-
-
-
-        
+        public void Init(string username, string password)
+        {
+            user.Username = username;
+            user.Password = password;
+        }
 
     }
+
+
+
+
+
+ 
 }

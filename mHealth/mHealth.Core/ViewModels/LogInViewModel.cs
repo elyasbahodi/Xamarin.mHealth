@@ -15,11 +15,11 @@ namespace mHealth.core.ViewModels
 {
     public class LogInViewModel : MvxViewModel
     {
-        private Account Account;
+        private User user;
         private readonly IMvxNavigationService _navigationService;
         public IMvxCommand MvxCreateAccountCommand { get; set; }
         public ICommand NavigateToMainMenuCommand => new MvxAsyncCommand(Navigate);
-        public AccountService AccountService { get; set; }
+        public UserService UserService { get; set; }
 
 
         private string _txtPassword;
@@ -28,8 +28,8 @@ namespace mHealth.core.ViewModels
             get { return _txtPassword; }
             set { _txtPassword = value; RaisePropertyChanged(() => TxtPassword); }
         }
-        private long _txtCpr;
-        public long TxtCpr
+        private string _txtCpr;
+        public string TxtCpr
         {
             get { return _txtCpr; }
             set { _txtCpr = value; RaisePropertyChanged(() => TxtCpr); }
@@ -38,17 +38,17 @@ namespace mHealth.core.ViewModels
 
         public LogInViewModel(IMvxNavigationService navigationService)
         {
-            AccountService = new AccountService();
+            UserService = new UserService();
             _navigationService = navigationService;
-            MvxCreateAccountCommand = new MvxCommand(() => ShowViewModel<CreateAccountViewModel>());
+            MvxCreateAccountCommand = new MvxCommand(() => ShowViewModel<CreateUserOneViewModel>());
         }
         
         private async Task Navigate()
         {
-            Account = await AccountService.Get(TxtCpr, TxtPassword);
-            if (!Account.Equals(null))
+            user = await UserService.Get(TxtCpr, TxtPassword, user);
+            if (!user.Equals(null))
             {
-                await _navigationService.Navigate<MainMenuViewModel, Account>(Account);
+                await _navigationService.Navigate<MainMenuViewModel, User>(user);
             }
             else
             {

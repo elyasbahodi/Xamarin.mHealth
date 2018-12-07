@@ -1,21 +1,13 @@
-﻿using mHealth.core.Models;
-using MvvmCross.Platform;
+﻿using MvvmCross.Platform;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using static Android.App.DownloadManager;
-using System.Runtime.Serialization;
-using System.Text.RegularExpressions;
+using Java.Lang;
 
 namespace mHealth.core.Services
 {
@@ -71,15 +63,15 @@ namespace mHealth.core.Services
 
 
 
-        public async Task<object> GetJsonFromApiAsync(string url, long cpr, object obj)
+        public async Task<object> GetJsonFromApiAsync(string url, string id, object obj)
         {
             Type ob = obj.GetType();
 
-            string newString = BaseUrl.GetBaseUrl() + url.Replace("{cpr}", cpr.ToString());
+            string newString = BaseUrl.GetBaseUrl() + url.Replace("{id}", id);
             Uri uri = new Uri(newString);
-            var apirequest = await httpClient.GetAsync(uri);
+            var apirequest = httpClient.GetAsync(uri).Result;
             apirequest.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            string response = apirequest.Content.ReadAsStringAsync().Result;
+            string response = await apirequest.Content.ReadAsStringAsync();
             //string news = Regex.Unescape( response);
              var jsonString = response.Replace(@"\", "");
              string final = jsonString.Trim().Substring(1, (jsonString.Length) - 2);

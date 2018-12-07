@@ -16,7 +16,7 @@ using Acr.UserDialogs;
 using MvvmCross.Platform.Droid.Platform;
 using MvvmCross.Platform;
 
-namespace mHealth.droid.Accounts
+namespace mHealth.droid.Users
 {
     [Activity(Label = "LogInActivity", MainLauncher = true)]
     public class LogInActivity : MvxActivity

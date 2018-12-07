@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace mHealth.core.ViewModels
 {
-    public class MainMenuViewModel : MvxViewModel<Account>
+    public class MainMenuViewModel : MvxViewModel<User>
     {
-        private Account Account;
+        private User user;
 
 
 
@@ -19,9 +19,9 @@ namespace mHealth.core.ViewModels
 
         }
 
-        public override void Prepare(Account parameter)
+        public override void Prepare(User parameter)
         {
-            Account = parameter;
+            throw new NotImplementedException();
         }
     }
 }

@@ -11,21 +11,21 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 
-namespace mHealth.droid.Clients
+namespace mHealth.droid.Users
 {
-    public class CreateClientDatePickerFragment : DialogFragment,
+    public class CreateUserDatePickerFragment : DialogFragment,
                                   DatePickerDialog.IOnDateSetListener
     {
       
 
-        public static readonly string TAG = "X:" + typeof(CreateClientDatePickerFragment).Name.ToUpper();
+        public static readonly string TAG = "X:" + typeof(CreateUserDatePickerFragment).Name.ToUpper();
 
         // Initialize this value to prevent NullReferenceExceptions.
         Action<DateTime> _dateSelectedHandler = delegate { };
 
-        public static CreateClientDatePickerFragment NewInstance(Action<DateTime> onDateSelected)
+        public static CreateUserDatePickerFragment NewInstance(Action<DateTime> onDateSelected)
         {
-            CreateClientDatePickerFragment frag = new CreateClientDatePickerFragment();
+            CreateUserDatePickerFragment frag = new CreateUserDatePickerFragment();
             frag._dateSelectedHandler = onDateSelected;
             return frag;
         }

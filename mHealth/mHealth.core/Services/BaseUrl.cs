@@ -10,7 +10,7 @@ namespace mHealth.core.Services
     {
         public static string GetBaseUrl()
         {
-            return "https://wepapi12.azurewebsites.net/"; 
+            return "http://wepapi12.azurewebsites.net/"; 
         }
       
     }

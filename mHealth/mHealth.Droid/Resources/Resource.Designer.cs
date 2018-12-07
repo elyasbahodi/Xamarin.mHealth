@@ -3174,10 +3174,10 @@ namespace mHealth.droid
 			public const int abc_select_dialog_material = 2130968601;
 			
 			// aapt resource value: 0x7f04001a
-			public const int CreateAccount = 2130968602;
+			public const int CreateUserOne = 2130968602;
 			
 			// aapt resource value: 0x7f04001b
-			public const int CreateClient = 2130968603;
+			public const int CreateUserTwo = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
 			public const int design_bottom_navigation_item = 2130968604;
