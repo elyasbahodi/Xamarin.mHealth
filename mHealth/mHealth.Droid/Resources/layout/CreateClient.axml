@@ -21,7 +21,7 @@
 	local:MvxItemTemplate="@layout/spinneritem"
       local:MvxDropDownItemTemplate="@layout/spinnerdropdownitem"
 		android:layout_marginTop="10dp"
-		local:MvxBind="ItemsSource GenderTypes; HandleItemSelected SelectedType, Mode=TwoWay"
+		local:MvxBind="ItemsSource GenderTypes; SelectedItem SelectedType, Mode=TwoWay"
 		android:id="@+id/GenderSpinner"/>
 <TextView
 		android:text=""

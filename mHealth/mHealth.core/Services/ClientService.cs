@@ -23,7 +23,7 @@ namespace mHealth.core.Services
 
         public async Task Create(Client client)
         {
-            await APIConnection.PostJsonToApi("api/Client?height={height}&date={date}&weight={weight}&gender={gender}", client);
+            await APIConnection.PostJsonToApi("api/Client?cvr={cvr}&height={height}&birthdate={birthdate}&weight={weight}&gender={gender}", client);
             
             
         }

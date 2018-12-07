@@ -34,6 +34,7 @@ namespace mHealth.core.Business_Logic
             int iterations = 5000; // higher makes brute force attacks more expensive
             int keyLengthInBytes = 16;
             byte[] key = NetFxCrypto.DeriveBytes.GetBytes(password, salt, iterations, keyLengthInBytes);
+            
             return key; 
         }
 
