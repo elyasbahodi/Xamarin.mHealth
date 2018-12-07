@@ -16,10 +16,11 @@ namespace mHealth.core.Services
         {
             APIConnection = new APIConnection();
         }
-        //public T Get<T>(int id, string url)
-        //{
-        //    return APIConnection.GetJsonFromApi(url, id);
-        //}
+        public async Task<Object> Get(long id, Client obj)
+        {
+            Client client = await (Task<Client>)APIConnection.GetJsonFromApiAsync("api/Client/{id}", id, obj).Result;
+            return client;
+        }
 
         public async Task Create(Client client)
         {

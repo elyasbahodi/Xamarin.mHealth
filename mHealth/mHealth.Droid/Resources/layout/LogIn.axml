@@ -19,17 +19,20 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/TxtCpr"
-		android:hint="@string/CprHint" />
+		android:hint="@string/CprHint" 
+		local:MvxBind="Text TxtCpr, Mode=OneWayToSource"	/>
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/TxtPassword"
-		android:hint="@string/PasswordHint" />
+		android:hint="@string/PasswordHint"
+		local:MvxBind="Text TxtPassword, Mode=OneWayToSource"/>
 	<Button
 		android:text="@string/BtnLogIn"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/BtnLogIn"
+		local:MvxBind="Click NavigateToMainMenuCommand"
 		android:clickable="true" />
 	<TextView
 		android:textAppearance="?android:attr/textAppearanceMedium"

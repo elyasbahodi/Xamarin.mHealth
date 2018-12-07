@@ -71,13 +71,13 @@ namespace mHealth.core.Services
 
 
 
-        public object GetJsonFromApiAsync(string url, long id, object obj)
+        public async Task<object> GetJsonFromApiAsync(string url, long cpr, object obj)
         {
             Type ob = obj.GetType();
 
-            string newString = BaseUrl.GetBaseUrl() + url.Replace("{cpr}", id.ToString());
+            string newString = BaseUrl.GetBaseUrl() + url.Replace("{cpr}", cpr.ToString());
             Uri uri = new Uri(newString);
-            var apirequest =  httpClient.GetAsync(uri).Result;
+            var apirequest = await httpClient.GetAsync(uri);
             apirequest.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             string response = apirequest.Content.ReadAsStringAsync().Result;
             //string news = Regex.Unescape( response);

@@ -1,10 +1,8 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Acr.UserDialogs;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace mHealth.core
 {
@@ -23,6 +21,9 @@ namespace mHealth.core
                 .EndingWith("Repository")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
+
+            Mvx.RegisterSingleton(() => UserDialogs.Instance);
+
 
             RegisterAppStart(new AppStart());
         }

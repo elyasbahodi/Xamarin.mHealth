@@ -12,6 +12,9 @@ using Android.Views;
 using Android.Widget;
 using mHealth.core.Services;
 using MvvmCross.Droid.Views;
+using Acr.UserDialogs;
+using MvvmCross.Platform.Droid.Platform;
+using MvvmCross.Platform;
 
 namespace mHealth.droid.Accounts
 {
@@ -19,29 +22,14 @@ namespace mHealth.droid.Accounts
     public class LogInActivity : MvxActivity
     {
 
-        Button LoginBtn;
-        Button SignUpBtn;
-        AccountService accountService = new AccountService();
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.LogIn);
-
-            LoginBtn = FindViewById<Button>(Resource.Id.BtnLogIn);
-            SignUpBtn = FindViewById<Button>(Resource.Id.BtnSignUp);
+            UserDialogs.Init(() => Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
 
             // Create your application here
         }
-        //private void FindAccount()
-        //{
-
-        //    string url = "api/Account/{id}";
-        //    var acc = accountService.Get(1, url, account);
-
-        //    Toast.MakeText(this, "x", ToastLength.Long);
-
-        //}
-
 
 
     }
