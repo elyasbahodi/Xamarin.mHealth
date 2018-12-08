@@ -46,7 +46,7 @@ namespace mHealth.core.ViewModels
         
         private async Task Navigate()
         {
-            user = await UserService.Get(TxtCpr, TxtPassword, user);
+            user = UserService.Get(TxtCpr, TxtPassword, user);
             if (!user.Equals(null))
             {
                 await _navigationService.Navigate<MainMenuViewModel, User>(user);
