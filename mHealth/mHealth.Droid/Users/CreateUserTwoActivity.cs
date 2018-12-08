@@ -14,7 +14,7 @@ using MvvmCross.Droid.Views;
 namespace mHealth.droid.Users
 {
     [Activity(Label = "CreateUserTwoActivity")]
-    public class CreateUserTwoActivity : MvxActivity<CreateUserTwoViewModel>
+    public class CreateUserTwoActivity : MvxActivity
     {
         TextView _dateDisplay;
         Button _dateSelectButton;

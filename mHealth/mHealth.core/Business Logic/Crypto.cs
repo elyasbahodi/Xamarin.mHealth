@@ -20,7 +20,7 @@ namespace mHealth.core.Business_Logic
         public string HashPassword(byte[] key)
         {
             
-            var hasher = WinRTCrypto.HashAlgorithmProvider.OpenAlgorithm(HashAlgorithm.Sha1);
+            var hasher = WinRTCrypto.HashAlgorithmProvider.OpenAlgorithm(HashAlgorithm.Sha256);
             byte[] hash = hasher.HashData(key);
            return Convert.ToBase64String(hash);
 

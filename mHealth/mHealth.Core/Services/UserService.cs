@@ -23,12 +23,19 @@ namespace mHealth.core.Services
 
         public async Task<User> Get(string username, string password, User user)
         {
-            byte[] salt = Convert.FromBase64String(user.Salt);
-            byte[] derivedKey = Crypto.DeriveKey(user.Password, salt);
-            string hash = Crypto.HashPassword(derivedKey);
+         
 
-            User emptyUser = await (Task<User>)APIConnection.GetJsonFromApiAsync("api/User?username={username}", username, user).Result;
-            return user;
+            user =  (User)APIConnection.GetJsonFromApiAsync("api/User?username={username}", username, user).Result;
+
+            byte[] salt = Convert.FromBase64String(user.Salt);
+            byte[] derivedKey = Crypto.DeriveKey(password, salt);
+            string hash = Crypto.HashPassword(derivedKey);
+            if (user.Password == hash)
+            {
+                return user;
+            }
+            return null; 
+           
         }
 
         public async Task Create(User user)

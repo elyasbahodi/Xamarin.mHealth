@@ -20,7 +20,7 @@ namespace mHealth.core.ViewModels
         private EnumDisplayNameValueConverter displayNameValueConverter;
 
         private UserService userService;
-        public IMvxNavigationService _navigationService { get; set; }
+     
 
         public ICommand NavigateToLogin => new MvxAsyncCommand(Navigate);
 
@@ -75,7 +75,10 @@ namespace mHealth.core.ViewModels
             user.Height = Height;
             user.Birthdate = Birthday;
             await userService.Create(user);
-            await _navigationService.Navigate<LogInViewModel>();
+
+            ShowViewModel<LogInViewModel>();
+          
+           
         }
 
         public void Init(string username, string password)

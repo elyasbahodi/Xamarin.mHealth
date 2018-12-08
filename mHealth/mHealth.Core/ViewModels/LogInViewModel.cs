@@ -41,6 +41,7 @@ namespace mHealth.core.ViewModels
             UserService = new UserService();
             _navigationService = navigationService;
             MvxCreateAccountCommand = new MvxCommand(() => ShowViewModel<CreateUserOneViewModel>());
+            user = new User();
         }
         
         private async Task Navigate()
