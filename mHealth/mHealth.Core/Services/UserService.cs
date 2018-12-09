@@ -24,11 +24,12 @@ namespace mHealth.core.Services
         public User Get(string username, string password, User user)
         {
             user = (User)APIConnection.GetJsonFromApiAsync("api/User?username={username}", username, user).Result;
-            
-            byte[] salt = Convert.FromBase64String(user.Salt);
+            var saltReplace = user.Salt.Replace(" ", "+");
+            var passwordReplace = user.Password.Replace(" ", "+");
+            byte[] salt = Convert.FromBase64String(saltReplace); 
             byte[] derivedKey = Crypto.DeriveKey(password, salt);
             string hash = Crypto.HashPassword(derivedKey);
-            if (user.Password == hash)
+            if (passwordReplace == hash)
             {
                 return user;
             }
