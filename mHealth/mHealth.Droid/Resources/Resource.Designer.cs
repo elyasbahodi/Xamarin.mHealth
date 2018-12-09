@@ -2493,6 +2493,9 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08001e
 			public const int MvxBindingTagUnique = 2131230750;
 			
+			// aapt resource value: 0x7f0800aa
+			public const int ResultTextView = 2131230890;
+			
 			// aapt resource value: 0x7f080038
 			public const int SHIFT = 2131230776;
 			

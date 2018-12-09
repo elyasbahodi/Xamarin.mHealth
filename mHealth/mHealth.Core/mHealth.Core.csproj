@@ -46,6 +46,9 @@
     <Reference Include="MvvmCross.Plugins.MethodBinding, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.Plugin.MethodBinding.5.7.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.MethodBinding.dll</HintPath>
     </Reference>
+    <Reference Include="MvvmValidation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=113792d2053ac461, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmValidation.3.1.0\lib\netstandard1.0\MvvmValidation.dll</HintPath>
+    </Reference>
     <Reference Include="PCLCrypto, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
       <HintPath>..\packages\PCLCrypto.2.0.147\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLCrypto.dll</HintPath>
     </Reference>
@@ -89,6 +92,7 @@
     <Compile Include="App.cs" />
     <Compile Include="AppStart.cs" />
     <Compile Include="Business Logic\Crypto.cs" />
+    <Compile Include="Business Logic\ValidationResultExstension.cs" />
     <Compile Include="Converter\EnumDisplayNameValueConverter.cs" />
     <Compile Include="Models\Diary.cs" />
     <Compile Include="Models\Dizziness.cs" />

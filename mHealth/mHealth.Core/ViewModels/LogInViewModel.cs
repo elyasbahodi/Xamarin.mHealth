@@ -1,9 +1,12 @@
 ﻿using Acr.UserDialogs;
+using Android.App;
+using mHealth.core.Business_Logic;
 using mHealth.core.Models;
 using mHealth.core.Services;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using MvvmValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +16,31 @@ using System.Windows.Input;
 
 namespace mHealth.core.ViewModels
 {
+
     public class LogInViewModel : MvxViewModel
     {
         private User user;
         private readonly IMvxNavigationService _navigationService;
+        
         public IMvxCommand MvxCreateAccountCommand { get; set; }
         public ICommand NavigateToMainMenuCommand => new MvxAsyncCommand(Navigate);
         public UserService UserService { get; set; }
+
+        private string _result;
+        public string Result
+        {
+            get => _result;
+            set { _result = value; RaisePropertyChanged(() => Result); RaisePropertyChanged(() => HasResult); }
+        }
+
+        public bool HasResult => string.IsNullOrEmpty(Result) == false;
+
+        private ObservableDictionary<string, string> _errors;
+        public ObservableDictionary<string, string> Errors
+        {
+            get => _errors;
+            set { _errors = value; RaisePropertyChanged(() => Errors); }
+        }
 
 
         private string _txtPassword;
@@ -35,6 +56,7 @@ namespace mHealth.core.ViewModels
             set { _txtCpr = value; RaisePropertyChanged(() => TxtCpr); }
         }
 
+     
 
         public LogInViewModel(IMvxNavigationService navigationService)
         {
@@ -42,21 +64,53 @@ namespace mHealth.core.ViewModels
             _navigationService = navigationService;
             MvxCreateAccountCommand = new MvxCommand(() => ShowViewModel<CreateUserOneViewModel>());
             user = new User();
-        }
+          
+    }
         
         private async Task Navigate()
         {
-            user = UserService.Get(TxtCpr, TxtPassword, user);
-            if (!user.Equals(null))
+            if (Validate())
             {
-                await _navigationService.Navigate<MainMenuViewModel, User>(user);
+
+                try {
+                    user = UserService.Get(TxtCpr, TxtPassword, user);
+
+                    if (!user.Equals(null))
+                    {
+                        await _navigationService.Navigate<MainMenuViewModel, User>(user);
+                    }
+                  
+                } catch (Exception ex)
+                {
+                    Result = "Forkert brugernavn eller kodeord";
+                }
             }
             else
             {
-               Mvx.Resolve<IUserDialogs>().Alert("Dine brugeroplyninger er ikke korrekte, prøv igen..");
+                return;
             }
+            
+     
+           
+           
+              
+           
         }
-        
+
+        private bool Validate()
+        {
+            var validator = new ValidationHelper();
+            validator.AddRequiredRule(() => TxtCpr, "Cpr is required.");
+            validator.AddRequiredRule(() => TxtPassword, "Password is required.");
+
+            var result = validator.ValidateAll();
+
+
+            Errors = result.AsObservableDictionary();
+
+            return result.IsValid;
+        }
+
 
 
 
