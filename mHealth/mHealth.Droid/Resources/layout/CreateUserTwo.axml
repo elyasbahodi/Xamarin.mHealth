@@ -18,8 +18,8 @@
 		android:layout_height="wrap_content"
 		android:minWidth="25px"
 		android:minHeight="25px"
-	local:MvxItemTemplate="@layout/spinneritem"
-      local:MvxDropDownItemTemplate="@layout/spinnerdropdownitem"
+		local:MvxItemTemplate="@layout/spinneritem"
+		local:MvxDropDownItemTemplate="@layout/spinnerdropdownitem"
 		android:layout_marginTop="10dp"
 		local:MvxBind="ItemsSource GenderTypes; SelectedItem SelectedType, Mode=TwoWay"
 		android:id="@+id/GenderSpinner"/>
