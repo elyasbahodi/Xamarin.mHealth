@@ -7,6 +7,8 @@
 	android:layout_height="match_parent"
 	android:minWidth="25px"
 	android:minHeight="25px">
+
+
 	<TextView
 		android:text="Opret profil 2/2"
 		android:textAppearance="?android:attr/textAppearanceMedium"
@@ -23,17 +25,12 @@
 		android:layout_marginTop="10dp"
 		local:MvxBind="ItemsSource GenderTypes; SelectedItem SelectedType"
 		android:id="@+id/GenderSpinner"/>
-	<TextView
+	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/date_display"
-		local:MvxBind="Text Birthday;Error Errors['Birthdate']"
+		local:MvxBind="Text Birthday; Error Errors['Birthdate'], Mode=OneWayToSource"
 	/>
-	<Button
-		android:text="Vælg Dato"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/date_select_button" />
 	<TextView
 		android:text="Indtast vægt"
 		android:layout_width="match_parent"
@@ -73,7 +70,6 @@
 		local:MvxBind="Text Result; Visible HasResult"
         />
 	<Button
-		
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		local:MvxBind="Text BtnText;Click NavigateToLogin, Mode=TwoWay"/>

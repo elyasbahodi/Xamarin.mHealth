@@ -13,7 +13,7 @@ namespace mHealth.core.ViewModels
 {
     public class CreateDizzinessViewModel : MvxViewModel<User>
     {
-        private User user;
+        private User User { get; set; }
         private DizzinessService dizzinessService;
         Dizziness dizziness;
         public ICommand MeasureDizzinessCommand => new MvxAsyncCommand(NavigateToMainMenu);  
@@ -26,6 +26,15 @@ namespace mHealth.core.ViewModels
             set { _level = value; RaisePropertyChanged(() => Level); }
         }
 
+        private string _result;
+
+        public string Result
+        {
+            get { return _result; }
+            set { _result = value; RaisePropertyChanged(() => Result); }
+        }
+
+
 
         public CreateDizzinessViewModel()
         {
@@ -36,17 +45,25 @@ namespace mHealth.core.ViewModels
 
         public async Task NavigateToMainMenu()
         {
-            dizziness.Date = DateTime.Now;
-            dizziness.Level = Level;
-            dizziness.UserID = user.Username;
-            Task<HttpResponseMessage> response = dizzinessService.Create(dizziness);
-            
+            HttpResponseMessage response;
+            try
+            {
+                dizziness.Date = DateTime.Now;
+                dizziness.Level = Level;
+                dizziness.UserID = User.Username;
+                response = await dizzinessService.Create(dizziness);
+            }
+            catch (Exception)
+            {
+                Result = "Something went wrong, try again.";
+            }            
         }
-
 
         public override void Prepare(User parameter)
         {
-            user = parameter;
+            User = parameter;
         }
+
+
     }
 }
