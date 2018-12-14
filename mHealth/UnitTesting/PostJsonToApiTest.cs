@@ -13,19 +13,19 @@ namespace UnitTesting
     [TestClass]
     public class PostJsonToApiTest
     {
-        APIConnection apiConnection;
+        DizzinessService dizzinessService;
    
 
         public PostJsonToApiTest()
         {
-            apiConnection = new APIConnection();
+            dizzinessService = new DizzinessService();
         }
 
         [TestMethod]
-        public void PostJsonToApi()
+        public void PostDizzinessJsonToApi()
         {
-            Step step = new Step();
-           Task<HttpResponseMessage> httpResponseMessage = apiConnection.PostJsonToApi("api/Step/{id}?date={date}&count={count}",step );
+            Dizziness dizziness = new Dizziness();
+            Task<HttpResponseMessage> httpResponseMessage = await dizzinessService.Create("api/Dizziness?userId={userId}&date={date}&level={level}" ,dizziness );
 
         }
     }
