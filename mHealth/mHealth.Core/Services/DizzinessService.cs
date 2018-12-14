@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,9 +16,9 @@ namespace mHealth.core.Services
         {
             APIConnection = new APIConnection();
         }
-        public async Task Create(Dizziness dizziness)
+        public async Task<HttpResponseMessage> Create(Dizziness dizziness)
         {
-            await APIConnection.PostJsonToApi("api/Dizziness/{id}?height={height}&date={date}&level={level}", dizziness);
+           return await APIConnection.PostJsonToApi("api/Dizziness/{id}?height={height}&date={date}&level={level}", dizziness);
             
         }
     }
