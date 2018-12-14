@@ -1305,44 +1305,47 @@ namespace mHealth.droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0c004b
-			public const int abc_background_cache_hint_selector_material_dark = 2131492939;
+			// aapt resource value: 0x7f0c004a
+			public const int LoginResult = 2131492938;
 			
 			// aapt resource value: 0x7f0c004c
-			public const int abc_background_cache_hint_selector_material_light = 2131492940;
+			public const int abc_background_cache_hint_selector_material_dark = 2131492940;
 			
 			// aapt resource value: 0x7f0c004d
-			public const int abc_btn_colored_borderless_text_material = 2131492941;
+			public const int abc_background_cache_hint_selector_material_light = 2131492941;
 			
 			// aapt resource value: 0x7f0c004e
-			public const int abc_btn_colored_text_material = 2131492942;
+			public const int abc_btn_colored_borderless_text_material = 2131492942;
 			
 			// aapt resource value: 0x7f0c004f
-			public const int abc_color_highlight_material = 2131492943;
+			public const int abc_btn_colored_text_material = 2131492943;
 			
 			// aapt resource value: 0x7f0c0050
-			public const int abc_hint_foreground_material_dark = 2131492944;
+			public const int abc_color_highlight_material = 2131492944;
 			
 			// aapt resource value: 0x7f0c0051
-			public const int abc_hint_foreground_material_light = 2131492945;
+			public const int abc_hint_foreground_material_dark = 2131492945;
+			
+			// aapt resource value: 0x7f0c0052
+			public const int abc_hint_foreground_material_light = 2131492946;
 			
 			// aapt resource value: 0x7f0c0000
 			public const int abc_input_method_navigation_guard = 2131492864;
 			
-			// aapt resource value: 0x7f0c0052
-			public const int abc_primary_text_disable_only_material_dark = 2131492946;
-			
 			// aapt resource value: 0x7f0c0053
-			public const int abc_primary_text_disable_only_material_light = 2131492947;
+			public const int abc_primary_text_disable_only_material_dark = 2131492947;
 			
 			// aapt resource value: 0x7f0c0054
-			public const int abc_primary_text_material_dark = 2131492948;
+			public const int abc_primary_text_disable_only_material_light = 2131492948;
 			
 			// aapt resource value: 0x7f0c0055
-			public const int abc_primary_text_material_light = 2131492949;
+			public const int abc_primary_text_material_dark = 2131492949;
 			
 			// aapt resource value: 0x7f0c0056
-			public const int abc_search_url_text = 2131492950;
+			public const int abc_primary_text_material_light = 2131492950;
+			
+			// aapt resource value: 0x7f0c0057
+			public const int abc_search_url_text = 2131492951;
 			
 			// aapt resource value: 0x7f0c0001
 			public const int abc_search_url_text_normal = 2131492865;
@@ -1353,29 +1356,29 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f0c0003
 			public const int abc_search_url_text_selected = 2131492867;
 			
-			// aapt resource value: 0x7f0c0057
-			public const int abc_secondary_text_material_dark = 2131492951;
-			
 			// aapt resource value: 0x7f0c0058
-			public const int abc_secondary_text_material_light = 2131492952;
+			public const int abc_secondary_text_material_dark = 2131492952;
 			
 			// aapt resource value: 0x7f0c0059
-			public const int abc_tint_btn_checkable = 2131492953;
+			public const int abc_secondary_text_material_light = 2131492953;
 			
 			// aapt resource value: 0x7f0c005a
-			public const int abc_tint_default = 2131492954;
+			public const int abc_tint_btn_checkable = 2131492954;
 			
 			// aapt resource value: 0x7f0c005b
-			public const int abc_tint_edittext = 2131492955;
+			public const int abc_tint_default = 2131492955;
 			
 			// aapt resource value: 0x7f0c005c
-			public const int abc_tint_seek_thumb = 2131492956;
+			public const int abc_tint_edittext = 2131492956;
 			
 			// aapt resource value: 0x7f0c005d
-			public const int abc_tint_spinner = 2131492957;
+			public const int abc_tint_seek_thumb = 2131492957;
 			
 			// aapt resource value: 0x7f0c005e
-			public const int abc_tint_switch_track = 2131492958;
+			public const int abc_tint_spinner = 2131492958;
+			
+			// aapt resource value: 0x7f0c005f
+			public const int abc_tint_switch_track = 2131492959;
 			
 			// aapt resource value: 0x7f0c0004
 			public const int accent_material_dark = 2131492868;
@@ -1431,8 +1434,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f0c003c
 			public const int design_bottom_navigation_shadow_color = 2131492924;
 			
-			// aapt resource value: 0x7f0c005f
-			public const int design_error = 2131492959;
+			// aapt resource value: 0x7f0c0060
+			public const int design_error = 2131492960;
 			
 			// aapt resource value: 0x7f0c003d
 			public const int design_fab_shadow_end_color = 2131492925;
@@ -1458,8 +1461,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f0c0044
 			public const int design_snackbar_background_color = 2131492932;
 			
-			// aapt resource value: 0x7f0c0060
-			public const int design_tint_password_toggle = 2131492960;
+			// aapt resource value: 0x7f0c0061
+			public const int design_tint_password_toggle = 2131492961;
 			
 			// aapt resource value: 0x7f0c0012
 			public const int dim_foreground_disabled_material_dark = 2131492882;
@@ -1488,8 +1491,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f0c001a
 			public const int highlighted_text_material_light = 2131492890;
 			
-			// aapt resource value: 0x7f0c004a
-			public const int ic_launcher_background = 2131492938;
+			// aapt resource value: 0x7f0c004b
+			public const int ic_launcher_background = 2131492939;
 			
 			// aapt resource value: 0x7f0c001b
 			public const int material_blue_grey_800 = 2131492891;
@@ -1584,11 +1587,11 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f0c0036
 			public const int switch_thumb_disabled_material_light = 2131492918;
 			
-			// aapt resource value: 0x7f0c0061
-			public const int switch_thumb_material_dark = 2131492961;
-			
 			// aapt resource value: 0x7f0c0062
-			public const int switch_thumb_material_light = 2131492962;
+			public const int switch_thumb_material_dark = 2131492962;
+			
+			// aapt resource value: 0x7f0c0063
+			public const int switch_thumb_material_light = 2131492963;
 			
 			// aapt resource value: 0x7f0c0037
 			public const int switch_thumb_normal_material_dark = 2131492919;
@@ -2457,14 +2460,14 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080034
 			public const int ALT = 2131230772;
 			
-			// aapt resource value: 0x7f080095
-			public const int BtnContinue = 2131230869;
+			// aapt resource value: 0x7f080090
+			public const int BtnContinue = 2131230864;
+			
+			// aapt resource value: 0x7f0800ad
+			public const int BtnLogIn = 2131230893;
 			
 			// aapt resource value: 0x7f0800af
-			public const int BtnLogIn = 2131230895;
-			
-			// aapt resource value: 0x7f0800b1
-			public const int BtnSignUp = 2131230897;
+			public const int BtnSignUp = 2131230895;
 			
 			// aapt resource value: 0x7f080035
 			public const int CTRL = 2131230773;
@@ -2472,17 +2475,17 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080036
 			public const int FUNCTION = 2131230774;
 			
-			// aapt resource value: 0x7f080096
-			public const int GenderSpinner = 2131230870;
-			
 			// aapt resource value: 0x7f080092
-			public const int LblCreateProfile = 2131230866;
+			public const int GenderSpinner = 2131230866;
 			
-			// aapt resource value: 0x7f0800b0
-			public const int LblNoAccount = 2131230896;
+			// aapt resource value: 0x7f08008d
+			public const int LblCreateProfile = 2131230861;
 			
-			// aapt resource value: 0x7f0800ad
-			public const int LoginWelcome = 2131230893;
+			// aapt resource value: 0x7f0800ae
+			public const int LblNoAccount = 2131230894;
+			
+			// aapt resource value: 0x7f0800ac
+			public const int LoginWelcome = 2131230892;
 			
 			// aapt resource value: 0x7f080037
 			public const int META = 2131230775;
@@ -2493,8 +2496,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08001e
 			public const int MvxBindingTagUnique = 2131230750;
 			
-			// aapt resource value: 0x7f0800ae
-			public const int ResultTextView = 2131230894;
+			// aapt resource value: 0x7f080098
+			public const int ResultTextView = 2131230872;
 			
 			// aapt resource value: 0x7f080038
 			public const int SHIFT = 2131230776;
@@ -2502,14 +2505,14 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080039
 			public const int SYM = 2131230777;
 			
-			// aapt resource value: 0x7f080093
-			public const int TxtCpr = 2131230867;
+			// aapt resource value: 0x7f08008f
+			public const int TxtPassword = 2131230863;
 			
-			// aapt resource value: 0x7f080094
-			public const int TxtPassword = 2131230868;
+			// aapt resource value: 0x7f08008e
+			public const int TxtUser = 2131230862;
 			
-			// aapt resource value: 0x7f0800ba
-			public const int action0 = 2131230906;
+			// aapt resource value: 0x7f0800b4
+			public const int action0 = 2131230900;
 			
 			// aapt resource value: 0x7f08007e
 			public const int action_bar = 2131230846;
@@ -2532,17 +2535,17 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08005c
 			public const int action_bar_title = 2131230812;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int action_container = 2131230903;
+			// aapt resource value: 0x7f0800b1
+			public const int action_container = 2131230897;
 			
 			// aapt resource value: 0x7f08007f
 			public const int action_context_bar = 2131230847;
 			
-			// aapt resource value: 0x7f0800be
-			public const int action_divider = 2131230910;
-			
 			// aapt resource value: 0x7f0800b8
-			public const int action_image = 2131230904;
+			public const int action_divider = 2131230904;
+			
+			// aapt resource value: 0x7f0800b2
+			public const int action_image = 2131230898;
 			
 			// aapt resource value: 0x7f080003
 			public const int action_menu_divider = 2131230723;
@@ -2559,11 +2562,11 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08005e
 			public const int action_mode_close_button = 2131230814;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int action_text = 2131230905;
+			// aapt resource value: 0x7f0800b3
+			public const int action_text = 2131230899;
 			
-			// aapt resource value: 0x7f0800c7
-			public const int actions = 2131230919;
+			// aapt resource value: 0x7f0800c1
+			public const int actions = 2131230913;
 			
 			// aapt resource value: 0x7f08005f
 			public const int activity_chooser_view_content = 2131230815;
@@ -2595,29 +2598,14 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08003f
 			public const int bottom = 2131230783;
 			
-			// aapt resource value: 0x7f080091
-			public const int button1 = 2131230865;
-			
-			// aapt resource value: 0x7f0800b2
-			public const int button2 = 2131230898;
-			
-			// aapt resource value: 0x7f0800b3
-			public const int button3 = 2131230899;
-			
-			// aapt resource value: 0x7f0800b4
-			public const int button4 = 2131230900;
-			
-			// aapt resource value: 0x7f0800b5
-			public const int button5 = 2131230901;
-			
-			// aapt resource value: 0x7f0800b6
-			public const int button6 = 2131230902;
+			// aapt resource value: 0x7f0800a7
+			public const int button1 = 2131230887;
 			
 			// aapt resource value: 0x7f080065
 			public const int buttonPanel = 2131230821;
 			
-			// aapt resource value: 0x7f0800bb
-			public const int cancel_action = 2131230907;
+			// aapt resource value: 0x7f0800b5
+			public const int cancel_action = 2131230901;
 			
 			// aapt resource value: 0x7f080047
 			public const int center = 2131230791;
@@ -2631,8 +2619,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080075
 			public const int checkbox = 2131230837;
 			
-			// aapt resource value: 0x7f0800c3
-			public const int chronometer = 2131230915;
+			// aapt resource value: 0x7f0800bd
+			public const int chronometer = 2131230909;
 			
 			// aapt resource value: 0x7f080050
 			public const int clip_horizontal = 2131230800;
@@ -2643,14 +2631,14 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08003b
 			public const int collapseActionView = 2131230779;
 			
-			// aapt resource value: 0x7f08009d
-			public const int container = 2131230877;
+			// aapt resource value: 0x7f08009b
+			public const int container = 2131230875;
 			
 			// aapt resource value: 0x7f080068
 			public const int contentPanel = 2131230824;
 			
-			// aapt resource value: 0x7f08009e
-			public const int coordinator = 2131230878;
+			// aapt resource value: 0x7f08009c
+			public const int coordinator = 2131230876;
 			
 			// aapt resource value: 0x7f08006f
 			public const int custom = 2131230831;
@@ -2658,11 +2646,11 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08006e
 			public const int customPanel = 2131230830;
 			
-			// aapt resource value: 0x7f080097
-			public const int date_display = 2131230871;
+			// aapt resource value: 0x7f080093
+			public const int date_display = 2131230867;
 			
-			// aapt resource value: 0x7f080098
-			public const int date_select_button = 2131230872;
+			// aapt resource value: 0x7f080094
+			public const int date_select_button = 2131230868;
 			
 			// aapt resource value: 0x7f08007c
 			public const int decor_content_parent = 2131230844;
@@ -2670,20 +2658,20 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080062
 			public const int default_activity_button = 2131230818;
 			
-			// aapt resource value: 0x7f0800a0
-			public const int design_bottom_sheet = 2131230880;
-			
-			// aapt resource value: 0x7f0800a7
-			public const int design_menu_item_action_area = 2131230887;
-			
-			// aapt resource value: 0x7f0800a6
-			public const int design_menu_item_action_area_stub = 2131230886;
+			// aapt resource value: 0x7f08009e
+			public const int design_bottom_sheet = 2131230878;
 			
 			// aapt resource value: 0x7f0800a5
-			public const int design_menu_item_text = 2131230885;
+			public const int design_menu_item_action_area = 2131230885;
 			
 			// aapt resource value: 0x7f0800a4
-			public const int design_navigation_view = 2131230884;
+			public const int design_menu_item_action_area_stub = 2131230884;
+			
+			// aapt resource value: 0x7f0800a3
+			public const int design_menu_item_text = 2131230883;
+			
+			// aapt resource value: 0x7f0800a2
+			public const int design_navigation_view = 2131230882;
 			
 			// aapt resource value: 0x7f080022
 			public const int disableHome = 2131230754;
@@ -2694,8 +2682,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080032
 			public const int end = 2131230770;
 			
-			// aapt resource value: 0x7f0800c9
-			public const int end_padder = 2131230921;
+			// aapt resource value: 0x7f0800c3
+			public const int end_padder = 2131230915;
 			
 			// aapt resource value: 0x7f080041
 			public const int enterAlways = 2131230785;
@@ -2730,6 +2718,9 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08000a
 			public const int ghost_view = 2131230730;
 			
+			// aapt resource value: 0x7f0800b0
+			public const int grid_Photos = 2131230896;
+			
 			// aapt resource value: 0x7f080005
 			public const int home = 2131230725;
 			
@@ -2739,8 +2730,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080064
 			public const int icon = 2131230820;
 			
-			// aapt resource value: 0x7f0800c8
-			public const int icon_group = 2131230920;
+			// aapt resource value: 0x7f0800c2
+			public const int icon_group = 2131230914;
 			
 			// aapt resource value: 0x7f08003c
 			public const int ifRoom = 2131230780;
@@ -2748,8 +2739,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080061
 			public const int image = 2131230817;
 			
-			// aapt resource value: 0x7f0800c4
-			public const int info = 2131230916;
+			// aapt resource value: 0x7f0800be
+			public const int info = 2131230910;
 			
 			// aapt resource value: 0x7f08005b
 			public const int italic = 2131230811;
@@ -2757,8 +2748,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080000
 			public const int item_touch_helper_previous_elevation = 2131230720;
 			
-			// aapt resource value: 0x7f08009c
-			public const int largeLabel = 2131230876;
+			// aapt resource value: 0x7f08009a
+			public const int largeLabel = 2131230874;
 			
 			// aapt resource value: 0x7f08004b
 			public const int left = 2131230795;
@@ -2775,23 +2766,23 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080063
 			public const int list_item = 2131230819;
 			
+			// aapt resource value: 0x7f0800aa
+			public const int loadingImage = 2131230890;
+			
+			// aapt resource value: 0x7f0800a8
+			public const int loadingProgressBar = 2131230888;
+			
 			// aapt resource value: 0x7f0800ab
-			public const int loadingImage = 2131230891;
+			public const int loadingProgressWheel = 2131230891;
 			
-			// aapt resource value: 0x7f0800a9
-			public const int loadingProgressBar = 2131230889;
+			// aapt resource value: 0x7f0800c6
+			public const int masked = 2131230918;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int loadingProgressWheel = 2131230892;
+			// aapt resource value: 0x7f0800b7
+			public const int media_actions = 2131230903;
 			
-			// aapt resource value: 0x7f0800cc
-			public const int masked = 2131230924;
-			
-			// aapt resource value: 0x7f0800bd
-			public const int media_actions = 2131230909;
-			
-			// aapt resource value: 0x7f0800ca
-			public const int message = 2131230922;
+			// aapt resource value: 0x7f0800c4
+			public const int message = 2131230916;
 			
 			// aapt resource value: 0x7f080033
 			public const int middle = 2131230771;
@@ -2802,8 +2793,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08002a
 			public const int multiply = 2131230762;
 			
-			// aapt resource value: 0x7f0800a3
-			public const int navigation_header_container = 2131230883;
+			// aapt resource value: 0x7f0800a1
+			public const int navigation_header_container = 2131230881;
 			
 			// aapt resource value: 0x7f08003d
 			public const int never = 2131230781;
@@ -2814,14 +2805,14 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080020
 			public const int normal = 2131230752;
 			
-			// aapt resource value: 0x7f0800c6
-			public const int notification_background = 2131230918;
-			
 			// aapt resource value: 0x7f0800c0
-			public const int notification_main_column = 2131230912;
+			public const int notification_background = 2131230912;
 			
-			// aapt resource value: 0x7f0800bf
-			public const int notification_main_column_container = 2131230911;
+			// aapt resource value: 0x7f0800ba
+			public const int notification_main_column = 2131230906;
+			
+			// aapt resource value: 0x7f0800b9
+			public const int notification_main_column_container = 2131230905;
 			
 			// aapt resource value: 0x7f08004e
 			public const int parallax = 2131230798;
@@ -2847,11 +2838,11 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08004c
 			public const int right = 2131230796;
 			
-			// aapt resource value: 0x7f0800c5
-			public const int right_icon = 2131230917;
+			// aapt resource value: 0x7f0800bf
+			public const int right_icon = 2131230911;
 			
-			// aapt resource value: 0x7f0800c1
-			public const int right_side = 2131230913;
+			// aapt resource value: 0x7f0800bb
+			public const int right_side = 2131230907;
 			
 			// aapt resource value: 0x7f08000c
 			public const int save_image_matrix = 2131230732;
@@ -2910,9 +2901,6 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08008b
 			public const int search_voice_btn = 2131230859;
 			
-			// aapt resource value: 0x7f08008e
-			public const int seekBar1 = 2131230862;
-			
 			// aapt resource value: 0x7f08008c
 			public const int select_dialog_listview = 2131230860;
 			
@@ -2928,14 +2916,14 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080027
 			public const int showTitle = 2131230759;
 			
-			// aapt resource value: 0x7f08009b
-			public const int smallLabel = 2131230875;
+			// aapt resource value: 0x7f080099
+			public const int smallLabel = 2131230873;
 			
-			// aapt resource value: 0x7f0800a2
-			public const int snackbar_action = 2131230882;
+			// aapt resource value: 0x7f0800a0
+			public const int snackbar_action = 2131230880;
 			
-			// aapt resource value: 0x7f0800a1
-			public const int snackbar_text = 2131230881;
+			// aapt resource value: 0x7f08009f
+			public const int snackbar_text = 2131230879;
 			
 			// aapt resource value: 0x7f080045
 			public const int snap = 2131230789;
@@ -2958,8 +2946,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08004d
 			public const int start = 2131230797;
 			
-			// aapt resource value: 0x7f0800bc
-			public const int status_bar_latest_event_content = 2131230908;
+			// aapt resource value: 0x7f0800b6
+			public const int status_bar_latest_event_content = 2131230902;
 			
 			// aapt resource value: 0x7f080078
 			public const int submenuarrow = 2131230840;
@@ -2979,11 +2967,11 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08001b
 			public const int text2 = 2131230747;
 			
-			// aapt resource value: 0x7f080099
-			public const int textInputEditText1 = 2131230873;
+			// aapt resource value: 0x7f080096
+			public const int textInputEditText1 = 2131230870;
 			
-			// aapt resource value: 0x7f08009a
-			public const int textInputEditText2 = 2131230874;
+			// aapt resource value: 0x7f080097
+			public const int textInputEditText2 = 2131230871;
 			
 			// aapt resource value: 0x7f08006c
 			public const int textSpacerNoButtons = 2131230828;
@@ -2991,20 +2979,17 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f08006b
 			public const int textSpacerNoTitle = 2131230827;
 			
-			// aapt resource value: 0x7f08008d
-			public const int textView1 = 2131230861;
+			// aapt resource value: 0x7f080091
+			public const int textView1 = 2131230865;
 			
-			// aapt resource value: 0x7f080090
-			public const int textView2 = 2131230864;
+			// aapt resource value: 0x7f080095
+			public const int textView2 = 2131230869;
 			
-			// aapt resource value: 0x7f08008f
-			public const int textView3 = 2131230863;
+			// aapt resource value: 0x7f0800a9
+			public const int textViewStatus = 2131230889;
 			
-			// aapt resource value: 0x7f0800aa
-			public const int textViewStatus = 2131230890;
-			
-			// aapt resource value: 0x7f0800a8
-			public const int text_input_password_toggle = 2131230888;
+			// aapt resource value: 0x7f0800a6
+			public const int text_input_password_toggle = 2131230886;
 			
 			// aapt resource value: 0x7f080014
 			public const int textinput_counter = 2131230740;
@@ -3012,8 +2997,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080015
 			public const int textinput_error = 2131230741;
 			
-			// aapt resource value: 0x7f0800c2
-			public const int time = 2131230914;
+			// aapt resource value: 0x7f0800bc
+			public const int time = 2131230908;
 			
 			// aapt resource value: 0x7f08001c
 			public const int title = 2131230748;
@@ -3030,8 +3015,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080070
 			public const int topPanel = 2131230832;
 			
-			// aapt resource value: 0x7f08009f
-			public const int touch_outside = 2131230879;
+			// aapt resource value: 0x7f08009d
+			public const int touch_outside = 2131230877;
 			
 			// aapt resource value: 0x7f08000f
 			public const int transition_current_scene = 2131230735;
@@ -3060,8 +3045,8 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800cb
-			public const int visible = 2131230923;
+			// aapt resource value: 0x7f0800c5
+			public const int visible = 2131230917;
 			
 			// aapt resource value: 0x7f08003e
 			public const int withText = 2131230782;
@@ -3204,139 +3189,136 @@ namespace mHealth.droid
 			public const int abc_select_dialog_material = 2130968601;
 			
 			// aapt resource value: 0x7f04001a
-			public const int CreateDizziness = 2130968602;
+			public const int CreateUserOne = 2130968602;
 			
 			// aapt resource value: 0x7f04001b
-			public const int CreateUserOne = 2130968603;
+			public const int CreateUserTwo = 2130968603;
 			
 			// aapt resource value: 0x7f04001c
-			public const int CreateUserTwo = 2130968604;
+			public const int design_bottom_navigation_item = 2130968604;
 			
 			// aapt resource value: 0x7f04001d
-			public const int design_bottom_navigation_item = 2130968605;
+			public const int design_bottom_sheet_dialog = 2130968605;
 			
 			// aapt resource value: 0x7f04001e
-			public const int design_bottom_sheet_dialog = 2130968606;
+			public const int design_layout_snackbar = 2130968606;
 			
 			// aapt resource value: 0x7f04001f
-			public const int design_layout_snackbar = 2130968607;
+			public const int design_layout_snackbar_include = 2130968607;
 			
 			// aapt resource value: 0x7f040020
-			public const int design_layout_snackbar_include = 2130968608;
+			public const int design_layout_tab_icon = 2130968608;
 			
 			// aapt resource value: 0x7f040021
-			public const int design_layout_tab_icon = 2130968609;
+			public const int design_layout_tab_text = 2130968609;
 			
 			// aapt resource value: 0x7f040022
-			public const int design_layout_tab_text = 2130968610;
+			public const int design_menu_item_action_area = 2130968610;
 			
 			// aapt resource value: 0x7f040023
-			public const int design_menu_item_action_area = 2130968611;
+			public const int design_navigation_item = 2130968611;
 			
 			// aapt resource value: 0x7f040024
-			public const int design_navigation_item = 2130968612;
+			public const int design_navigation_item_header = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int design_navigation_item_header = 2130968613;
+			public const int design_navigation_item_separator = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int design_navigation_item_separator = 2130968614;
+			public const int design_navigation_item_subheader = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int design_navigation_item_subheader = 2130968615;
+			public const int design_navigation_menu = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int design_navigation_menu = 2130968616;
+			public const int design_navigation_menu_item = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int design_navigation_menu_item = 2130968617;
+			public const int design_text_input_password_icon = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int design_text_input_password_icon = 2130968618;
+			public const int itemview = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int itemview = 2130968619;
+			public const int loading = 2130968619;
 			
 			// aapt resource value: 0x7f04002c
-			public const int loading = 2130968620;
+			public const int loadingimage = 2130968620;
 			
 			// aapt resource value: 0x7f04002d
-			public const int loadingimage = 2130968621;
+			public const int loadingprogress = 2130968621;
 			
 			// aapt resource value: 0x7f04002e
-			public const int loadingprogress = 2130968622;
+			public const int LogIn = 2130968622;
 			
 			// aapt resource value: 0x7f04002f
-			public const int LogIn = 2130968623;
+			public const int MainMenu = 2130968623;
 			
 			// aapt resource value: 0x7f040030
-			public const int MainMenu = 2130968624;
+			public const int notification_action = 2130968624;
 			
 			// aapt resource value: 0x7f040031
-			public const int notification_action = 2130968625;
+			public const int notification_action_tombstone = 2130968625;
 			
 			// aapt resource value: 0x7f040032
-			public const int notification_action_tombstone = 2130968626;
+			public const int notification_media_action = 2130968626;
 			
 			// aapt resource value: 0x7f040033
-			public const int notification_media_action = 2130968627;
+			public const int notification_media_cancel_action = 2130968627;
 			
 			// aapt resource value: 0x7f040034
-			public const int notification_media_cancel_action = 2130968628;
+			public const int notification_template_big_media = 2130968628;
 			
 			// aapt resource value: 0x7f040035
-			public const int notification_template_big_media = 2130968629;
+			public const int notification_template_big_media_custom = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int notification_template_big_media_custom = 2130968630;
+			public const int notification_template_big_media_narrow = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int notification_template_big_media_narrow = 2130968631;
+			public const int notification_template_big_media_narrow_custom = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int notification_template_big_media_narrow_custom = 2130968632;
+			public const int notification_template_custom_big = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int notification_template_custom_big = 2130968633;
+			public const int notification_template_icon_group = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int notification_template_icon_group = 2130968634;
+			public const int notification_template_lines_media = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int notification_template_lines_media = 2130968635;
+			public const int notification_template_media = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int notification_template_media = 2130968636;
+			public const int notification_template_media_custom = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int notification_template_media_custom = 2130968637;
+			public const int notification_template_part_chronometer = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int notification_template_part_chronometer = 2130968638;
+			public const int notification_template_part_time = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int notification_template_part_time = 2130968639;
+			public const int select_dialog_item_material = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int select_dialog_item_material = 2130968640;
+			public const int select_dialog_multichoice_material = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int select_dialog_multichoice_material = 2130968641;
+			public const int select_dialog_singlechoice_material = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int select_dialog_singlechoice_material = 2130968642;
+			public const int SpinnerDropDownItem = 2130968642;
 			
 			// aapt resource value: 0x7f040043
-			public const int SpinnerDropDownItem = 2130968643;
+			public const int SpinnerItem = 2130968643;
 			
 			// aapt resource value: 0x7f040044
-			public const int SpinnerItem = 2130968644;
+			public const int support_simple_spinner_dropdown_item = 2130968644;
 			
 			// aapt resource value: 0x7f040045
-			public const int support_simple_spinner_dropdown_item = 2130968645;
-			
-			// aapt resource value: 0x7f040046
-			public const int tooltip = 2130968646;
+			public const int tooltip = 2130968645;
 			
 			static Layout()
 			{
@@ -3382,9 +3364,6 @@ namespace mHealth.droid
 			// aapt resource value: 0x7f090031
 			public const int BtnSignUp = 2131296305;
 			
-			// aapt resource value: 0x7f09002d
-			public const int CprHint = 2131296301;
-			
 			// aapt resource value: 0x7f090028
 			public const int Hello = 2131296296;
 			
@@ -3396,6 +3375,9 @@ namespace mHealth.droid
 			
 			// aapt resource value: 0x7f09002e
 			public const int PasswordHint = 2131296302;
+			
+			// aapt resource value: 0x7f09002d
+			public const int UserHint = 2131296301;
 			
 			// aapt resource value: 0x7f090000
 			public const int abc_action_bar_home_description = 2131296256;

@@ -35,8 +35,6 @@ namespace mHealth.core.Services
         
                return await httpClient.PostAsync(newUri, content);
           
-         
-
         }
 
         public string ReplaceUrlvalues(string url, object obj)
@@ -84,10 +82,6 @@ namespace mHealth.core.Services
              string final = jsonString.Trim().Substring(1, (jsonString.Length) - 2);
              return JsonConvert.DeserializeObject(final, ob);
 
-
-
-         }
-
-
-    }
+            }
+        }
 }
