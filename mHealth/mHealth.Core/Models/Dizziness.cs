@@ -11,6 +11,7 @@ namespace mHealth.core.Models
         public int ID { get; set; }
         public int Level { get; set; }
         public DateTime Date { get; set; }
+        public string UserID { get; set; }
 
         public Dizziness()
         {

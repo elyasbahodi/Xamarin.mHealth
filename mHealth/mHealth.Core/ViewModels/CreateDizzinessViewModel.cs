@@ -4,6 +4,7 @@ using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -37,7 +38,8 @@ namespace mHealth.core.ViewModels
         {
             dizziness.Date = DateTime.Now;
             dizziness.Level = Level;
-            await dizzinessService.Create(dizziness);
+            dizziness.UserID = user.Username;
+            Task<HttpResponseMessage> response = dizzinessService.Create(dizziness);
             
         }
 
