@@ -21,5 +21,7 @@ namespace mHealth.core.Services
            return await APIConnection.PostJsonToApi("api/Dizziness?userId={userId}&date={date}&level={level}", dizziness);
             
         }
+
+
     }
 }

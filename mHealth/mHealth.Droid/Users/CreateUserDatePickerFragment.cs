@@ -10,14 +10,15 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using mHealth.core.ViewModels;
 
 namespace mHealth.droid.Users
 {
     public class CreateUserDatePickerFragment : DialogFragment,
                                   DatePickerDialog.IOnDateSetListener
     {
-      
 
+        CreateUserTwoViewModel CreateUserTwoViewModel;
         public static readonly string TAG = "X:" + typeof(CreateUserDatePickerFragment).Name.ToUpper();
 
         // Initialize this value to prevent NullReferenceExceptions.
@@ -48,6 +49,8 @@ namespace mHealth.droid.Users
             Log.Debug(TAG, selectedDate.ToLongDateString());
             _dateSelectedHandler(selectedDate);
         }
+
+
 
     }
 }

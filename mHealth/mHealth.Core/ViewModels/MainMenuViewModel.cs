@@ -1,4 +1,5 @@
 ﻿using mHealth.core.Models;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -13,14 +14,17 @@ namespace mHealth.core.ViewModels
     {
         private User user;
         public ICommand DizzinessCommand => new MvxCommand(NavigateToDizziness);
-        public MainMenuViewModel()
-        {
+        private IMvxNavigationService _navigationService;
 
+        public MainMenuViewModel(IMvxNavigationService NavigationService)
+        {
+            _navigationService = NavigationService;
         }
 
         public void NavigateToDizziness()
         {
-            ShowViewModel<CreateDizzinessViewModel>(user);
+
+            _navigationService.Navigate<CreateDizzinessViewModel, User>(user);
         }
 
 
