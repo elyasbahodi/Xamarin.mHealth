@@ -18,23 +18,24 @@
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/TxtCpr"
-		android:hint="@string/CprHint" 
-		local:MvxBind="Text TxtCpr;Error Errors['TxtCpr']"	/>
+		android:id="@+id/TxtUser"
+		android:hint="@string/UserHint" 
+		local:MvxBind="Text TxtUser;Error Errors['TxtUser']"	/>
+	
 	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/TxtPassword"
 		android:hint="@string/PasswordHint"
 		local:MvxBind="Text TxtPassword;Error Errors['TxtPassword']"/>
-	  <TextView
+	 <TextView
         android:minHeight="40dp"
         android:layout_margin="4dp"
         android:text="Result"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ResultTextView"
-        android:textColor="#f00" 
+        android:textColor="@color/LoginResult" 
         local:MvxBind="Text Result; Visible HasResult"
         />
 	<Button

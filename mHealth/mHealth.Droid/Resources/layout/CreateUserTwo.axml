@@ -13,43 +13,69 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView1" />
-		<MvxSpinner
-	android:layout_width="match_parent"
+	<MvxSpinner
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:minWidth="25px"
 		android:minHeight="25px"
 		local:MvxItemTemplate="@layout/spinneritem"
 		local:MvxDropDownItemTemplate="@layout/spinnerdropdownitem"
 		android:layout_marginTop="10dp"
-		local:MvxBind="ItemsSource GenderTypes; SelectedItem SelectedType, Mode=TwoWay"
+		local:MvxBind="ItemsSource GenderTypes; SelectedItem SelectedType"
 		android:id="@+id/GenderSpinner"/>
-<TextView
+	<TextView
 		android:text=""
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/date_display" 
-		local:MvxBind="Text Birthday, Mode=OneWayToSource"
+		android:id="@+id/date_display"
+		local:MvxBind="Text Birthday;Error Errors['Birthdate']"
 	/>
 	<Button
 		android:text="Vælg Dato"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/date_select_button" />
-	<android.support.design.widget.TextInputEditText
+	<TextView
+		android:text="Indtast vægt"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:id="@+id/textView2"
+		android:padding="10dp" />
+	<EditText
+		android:layout_width="383.0dp"
+		android:layout_height="wrap_content"
 		android:hint="Weight..."
-		local:MvxBind="Text Weight, Mode=OneWayToSource"
-		android:id="@+id/textInputEditText1" />
-	<android.support.design.widget.TextInputEditText
+		local:MvxBind="Text Weight;Error Errors['Weight']"
+		android:id="@+id/textInputEditText1"
+		android:layout_marginRight="117.5dp"
+		android:padding="10dp"/>
+	<TextView
+		android:text="Indtast højde"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView2"
+		android:padding="10dp" />
+	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:hint="Height..."
-		local:MvxBind="Text Height, Mode=OneWayToSource"
-		android:id="@+id/textInputEditText2" />
+		local:MvxBind="Text Height;Error Errors['Height']"
+		android:id="@+id/textInputEditText2"
+			android:padding="10dp"
+	/>
+	<TextView
+		android:minHeight="40dp"
+		android:layout_margin="4dp"
+		android:text="Result"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/ResultTextView"
+		android:textColor="#f00"
+		local:MvxBind="Text Result; Visible HasResult"
+        />
 	<Button
-		android:text="Opret Profil"
+		
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		local:MvxBind="Click NavigateToLogin"/>
+		local:MvxBind="Text BtnText;Click NavigateToLogin, Mode=TwoWay"/>
 </LinearLayout>

@@ -12,19 +12,19 @@
 		android:id="@+id/LblCreateProfile"
 		android:padding="10dp"
 		android:text="Profil Oprettelse 1/2" />
-	<android.support.design.widget.TextInputEditText
+	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/TxtCpr"
-		local:MvxBind="Text Username"
+		android:id="@+id/TxtUser"
+		local:MvxBind="Text Username;Error Errors['Username']"
 		android:hint="username"
 	/>
-	<android.support.design.widget.TextInputEditText
+	<EditText
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/TxtPassword"
 		android:hint="Kodeord"
-		local:MvxBind="Text Password"
+		local:MvxBind="Text Password;Error Errors['Password']"
 	/>
 
 	<Button
@@ -33,6 +33,7 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/BtnContinue" 
 		local:MvxBind="Click NavigateToCreateClient"
+		
 	/>
 
 </LinearLayout>

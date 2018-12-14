@@ -49,11 +49,11 @@ namespace mHealth.core.ViewModels
             get { return _txtPassword; }
             set { _txtPassword = value; RaisePropertyChanged(() => TxtPassword); }
         }
-        private string _txtCpr;
-        public string TxtCpr
+        private string _txtUser;
+        public string TxtUser
         {
-            get { return _txtCpr; }
-            set { _txtCpr = value; RaisePropertyChanged(() => TxtCpr); }
+            get { return _txtUser; }
+            set { _txtUser = value; RaisePropertyChanged(() => TxtUser); }
         }
 
      
@@ -71,9 +71,8 @@ namespace mHealth.core.ViewModels
         {
             if (Validate())
             {
-
                 try {
-                    user = UserService.Get(TxtCpr, TxtPassword, user);
+                    user = UserService.Get(TxtUser, TxtPassword, user);
 
                     if (!user.Equals(null))
                     {
@@ -89,19 +88,13 @@ namespace mHealth.core.ViewModels
             {
                 return;
             }
-            
-     
-           
-           
-              
-           
         }
 
         private bool Validate()
         {
             var validator = new ValidationHelper();
-            validator.AddRequiredRule(() => TxtCpr, "Cpr is required.");
-            validator.AddRequiredRule(() => TxtPassword, "Password is required.");
+            validator.AddRequiredRule(() => TxtUser, "Brugernavn skal indtastes");
+            validator.AddRequiredRule(() => TxtPassword, "Kodeord skal indtastes");
 
             var result = validator.ValidateAll();
 

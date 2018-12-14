@@ -3,6 +3,7 @@ using mHealth.core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,7 +40,7 @@ namespace mHealth.core.Services
             }          
         }
 
-        public async Task Create(User user)
+        public async Task<HttpResponseMessage> Create(User user)
         {
             string url = "api/User?username={username}&password={password}&salt={salt}&height={height}&birthdate={birthdate}&weight={weight}&gender={gender}";
             byte[] salt = Crypto.GenerateSalt();
@@ -47,7 +48,7 @@ namespace mHealth.core.Services
             string hash = Crypto.HashPassword(derivedKey);
             user.Password = hash;
             user.Salt = Convert.ToBase64String(salt);
-            await APIConnection.PostJsonToApi(url, user);
+           return await APIConnection.PostJsonToApi(url, user);
         }
     }
 
