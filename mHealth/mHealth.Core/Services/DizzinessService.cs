@@ -18,7 +18,7 @@ namespace mHealth.core.Services
         }
         public async Task<HttpResponseMessage> Create(Dizziness dizziness)
         {
-           return await APIConnection.PostJsonToApi("api/Dizziness?userId={userId}&date={date}&level={level}", dizziness);
+           return await APIConnection.PostJsonToApi("api/Dizziness?userid={userid}&date={date}&level={level}", dizziness);
             
         }
 

@@ -50,7 +50,7 @@ namespace mHealth.core.ViewModels
             {
                 dizziness.Date = DateTime.Now;
                 dizziness.Level = Level;
-                dizziness.UserID = User.Username;
+                dizziness.UserId = User.Username;
                 response = await dizzinessService.Create(dizziness);
             }
             catch (Exception)

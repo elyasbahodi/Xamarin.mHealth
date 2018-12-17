@@ -27,6 +27,7 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/TxtPassword"
 		android:hint="@string/PasswordHint"
+		android:inputType="textPassword"
 		local:MvxBind="Text TxtPassword;Error Errors['TxtPassword']"/>
 	 <TextView
         android:minHeight="40dp"

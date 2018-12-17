@@ -27,8 +27,8 @@ namespace mHealth.core.Models
 
         //[JsonProperty(PropertyName = "Steps")]
         //public List<Step> Steps { get; set; }
-        //[JsonProperty(PropertyName = "Dizzinesses")]
-        //public List<Dizziness> Dizzinesses { get; set; }
+        [JsonProperty(PropertyName = "Dizzinesses")]
+        public List<Dizziness> Dizzinesses { get; set; }
         //[JsonProperty(PropertyName = "Exercises")]
         //public List<Exercise> Exercises { get; set; }
         //[JsonProperty(PropertyName = "Diary")]
@@ -36,7 +36,7 @@ namespace mHealth.core.Models
         public User()
         {
             //Steps = new List<Step>();
-            //Dizzinesses = new List<Dizziness>();
+            Dizzinesses = new List<Dizziness>();
             //Exercises = new List<Exercise>();
             //Diary = new Diary();
 

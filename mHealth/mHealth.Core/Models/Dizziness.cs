@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,14 @@ namespace mHealth.core.Models
 {
     public class Dizziness
     {
+        [JsonIgnore]
         public int ID { get; set; }
-        public int Level { get; set; }
+        [JsonProperty(PropertyName = "userid")]
+        public string UserId { get; set; }
+        [JsonProperty(PropertyName = "date")]
         public DateTime Date { get; set; }
-        public string UserID { get; set; }
+        [JsonProperty(PropertyName = "level")]
+        public int Level { get; set; }
 
         public Dizziness()
         {
