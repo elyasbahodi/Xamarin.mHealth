@@ -52,6 +52,7 @@ namespace mHealth.core.ViewModels
                 dizziness.Level = Level;
                 dizziness.UserId = User.Username;
                 response = await dizzinessService.Create(dizziness);
+                ShowViewModel<MainMenuViewModel>();
             }
             catch (Exception)
             {
