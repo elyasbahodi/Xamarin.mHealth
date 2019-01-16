@@ -1,5 +1,5 @@
 ﻿using Acr.UserDialogs;
-using Android.App;
+
 using mHealth.core.Business_Logic;
 using mHealth.core.Models;
 using mHealth.core.Services;

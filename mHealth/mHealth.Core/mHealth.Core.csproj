@@ -108,6 +108,7 @@
     <Compile Include="Services\DizzinessService.cs" />
     <Compile Include="Services\ExerciseService.cs" />
     <Compile Include="Services\GenericObjectHelper.cs" />
+    <Compile Include="Services\IUserService.cs" />
     <Compile Include="Services\PageService.cs" />
     <Compile Include="Services\StepService.cs" />
     <Compile Include="Services\UserService.cs" />

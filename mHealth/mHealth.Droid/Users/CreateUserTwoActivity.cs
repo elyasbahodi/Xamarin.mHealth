@@ -23,7 +23,7 @@ namespace mHealth.droid.Users
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.CreateUserTwo);
 
-            CreateUserTwoViewModel = new CreateUserTwoViewModel();
+          
             _dateDisplay = FindViewById<TextView>(Resource.Id.date_display);
             _dateDisplay.Click += DateSelect_OnClick;
 

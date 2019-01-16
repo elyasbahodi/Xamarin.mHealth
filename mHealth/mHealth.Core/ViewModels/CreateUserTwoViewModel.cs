@@ -4,6 +4,7 @@ using mHealth.core.Models;
 using mHealth.core.Services;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 using MvvmValidation;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace mHealth.core.ViewModels
         private User user;
         private EnumDisplayNameValueConverter displayNameValueConverter;
 
-        private UserService userService;
+        private readonly IUserService userService;
      
 
         public ICommand NavigateToLogin => new MvxAsyncCommand(Navigate);
@@ -91,11 +92,10 @@ namespace mHealth.core.ViewModels
             set { _btnText = value; RaisePropertyChanged(() => BtnText); }
         }
 
-        public CreateUserTwoViewModel()
+        public CreateUserTwoViewModel(IUserService iUserService)
         {
-           // Init(username, password);
+            userService = iUserService;
             user = new User();
-            userService = new UserService();
             displayNameValueConverter = new EnumDisplayNameValueConverter();
             BtnText = "Opret Profil"; 
         }

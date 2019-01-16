@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace mHealth.core.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private APIConnection APIConnection { get; set; }
         private Crypto Crypto;

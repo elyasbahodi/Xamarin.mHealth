@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Java.Lang;
+
 using mHealth.core.Models;
 
 namespace mHealth.core.Services
